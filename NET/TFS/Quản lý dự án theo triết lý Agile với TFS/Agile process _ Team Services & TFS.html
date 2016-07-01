@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="layout" content="Conceptual" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="MSHAttr.msprod" content="ms.prod:ALM" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ROBOTS" content="INDEX, FOLLOW" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="version" content="0" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ms.version" content="ALM" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ms.contentlang" content="en-us" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ms.sitename" content="VisualStudio" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ms.depotname" content="VS.vscom" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="description" content="Agile process objects used to plan and track work, monitor progress, and trends when connecting to Visual Studio Team Services (VSTS) or Team Foundation Server" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ms.contentid" content="28e9cb42-f049-45eb-a2d8-f7a3b93471b8" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ms.gitcommit" content="https://mseng.visualstudio.com/DefaultCollection/VSOnline/_git/Content.VS/commit/98e5afbf8418a77cf00cfee3f93a1694330d76fe?path=%2fvscom%2fdocs%2fwork%2fguidance%2fagile-process.md&amp;_a=contents" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ms.giturl" content="https://mseng.visualstudio.com/DefaultCollection/VSOnline/_git/Content.VS?path=%2fvscom%2fdocs%2fwork%2fguidance%2fagile-process.md&amp;version=GBlive&amp;_a=contents" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ms.opspagetype" content="Conceptual" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ms.documentid" content="b337dd1d-7973-1ce3-d608-46c3d3d25c21" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="content_type" content="text/html" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="content_uri" content="https://opdhsblobprod02.blob.core.windows.net/contents/95dbbb774d6a42ed9c58308d126f725d/c1a528b7b0674b808fddb4446eeff099" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml">
+<meta name="ms.contentsource" content="OP" xmlns:c="urn:msdn-com:mtps/2004/1/common" xmlns="http://www.w3.org/1999/xhtml"><link rel="canonical" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process">
+    <title>Agile process | Team Services &amp; TFS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<meta name="ms.prod" content="visual-studio-tfs-dev14">
+
+<meta name="AmbientContext" content="{&quot;layout.limit_max_width&quot;:false,&quot;AmbientContextId&quot;:&quot;0CC2E747-8032-4DB1-9375-4B1AF379AEBF&quot;,&quot;display.use_large_font&quot;:false,&quot;insight.perf_timing&quot;:true,&quot;AmbientContextDownstream&quot;:{},&quot;display.high_contrast&quot;:false,&quot;insight.use_wedcs_vnext&quot;:true}">
+
+<meta name="MN" content="4B9B1F27-6:33:40 AM">
+
+<meta name="ms.locale" content="vi-vn">
+
+<meta name="ms.lang" content="VI">
+
+<meta name="ms.loc" content="VN">
+
+<meta name="ms.assetid" content="">
+
+<meta name="ms.auth" content="1">
+
+<meta name="ms.prodfamily" content="ALM">
+
+<meta name="ms.technology" content="vs-devops-wit">
+    <script type="text/javascript" src="./Agile process _ Team Services &amp; TFS_files/ai.0.js" async=""></script><script type="text/javascript" data-do-not-move="true">
+        //<![CDATA[
+        var AmbientContext = null;
+
+        (function () {
+            var root = (function () { return this; }).call(null);
+
+            var GetCookie = function (name) {
+                var cookies = root.document.cookie ? root.document.cookie.split('; ') : [];
+                for (var i = 0; i < cookies.length; i++) {
+                    var pos = cookies[i].indexOf('=');
+                    if (name === root.decodeURIComponent(cookies[i].slice(0, pos))) {
+                        var cookie = cookies[i].slice(pos + 1).replace(/\+/g, ' ');
+                        cookie = root.decodeURIComponent(cookie);
+                        return cookie;
+                    }
+                }
+            };
+
+            var JsonDeserialize = function (content) {
+                return root.JSON && root.JSON.parse ? root.JSON.parse(content) : (new Function('return (' + content + ')'))();
+            };
+
+            try {
+                AmbientContext = GetCookie('AmbientContext');
+                AmbientContext = AmbientContext && JsonDeserialize(AmbientContext);
+            } catch (ex) {
+            } finally {
+                AmbientContext = AmbientContext || null;
+            }
+        })();
+        //]]>
+    </script>
+
+    <script async="async" type="text/javascript" src="./Agile process _ Team Services &amp; TFS_files/jquery-2.1.0.min.js" data-do-not-move="true" data-provides="jQuery"></script>
+    
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+    
+<link rel="stylesheet" type="text/css" href="./Agile process _ Team Services &amp; TFS_files/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="./Agile process _ Team Services &amp; TFS_files/Combined.css"><script class="mtps-injected">try {
+/**/
+(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { 
+	"image": "https://i3-vso.sec.s-msft.com", 
+	"js": "https://i2-vso.sec.s-msft.com", 
+	"css": "https://i-vso.sec.s-msft.com", 
+	"xap": "https://i-vso.sec.s-msft.com", 
+	"ttf": "https://i-vso.sec.s-msft.com"
+});
+/**/
+} finally { MTPS._injectNextScript_0 && MTPS._injectNextScript_0(); }</script><script class="mtps-injected" src="./Agile process _ Team Services &amp; TFS_files/open-rating.entry.min.js"></script><script class="mtps-injected">try {
+//
+
+        window.appInsightsId = '';
+        //
+} finally { MTPS._injectNextScript_2 && MTPS._injectNextScript_2(); }</script><script class="mtps-injected" src="./Agile process _ Team Services &amp; TFS_files/Combined.js"></script><meta name="ms.layout_limit_max_width" content="false"><meta name="ms.AmbientContextId" content="0CC2E747-8032-4DB1-9375-4B1AF379AEBF"><meta name="ms.display_use_large_font" content="false"><meta name="ms.insight_perf_timing" content="true"><meta name="ms.AmbientContextDownstream" content="%7B%7D"><meta name="ms.display_high_contrast" content="false"><meta name="ms.insight_use_wedcs_vnext" content="true"><script class="mtps-injected" src="./Agile process _ Team Services &amp; TFS_files/bootstrap.min.js"></script><script class="mtps-injected" src="./Agile process _ Team Services &amp; TFS_files/Combined(1).js"></script><script class="mtps-injected" src="./Agile process _ Team Services &amp; TFS_files/SearchBox.jss"></script><script class="mtps-injected" src="./Agile process _ Team Services &amp; TFS_files/Combined(2).js"></script><script class="mtps-injected">try {
+//
+                    // Load metadata into map to speed up reading later.
+                    var metadataMap = {};
+                    var metadataElements = document.getElementsByTagName("meta");
+                    for (var i = 0; i < metadataElements.length; ++i)
+                    {
+                        var meta = metadataElements[i];
+                        var name = meta.getAttribute("name");
+                        if (name)
+                        {
+                            metadataMap[name.toLowerCase()] = meta.getAttribute("content");
+                        }
+                    }
+
+                    window.openFeedbackOptions =
+                    {
+                        environment: "prod",
+                        anonUserCookieName:"A",
+                        documentMetaName: "ms.documentid",
+                        documentSnapIdMetaName: "ms.gitcommit",
+                        localeMetaName: "ms.locale",
+                        propertyBag:
+                        {
+                            "ms.depotname": metadataMap["ms.depotname"],
+                            "ms.contentsource": metadataMap["ms.contentsource"]
+                        }
+                    };
+                //
+} finally { MTPS._injectNextScript_8 && MTPS._injectNextScript_8(); }</script><script class="mtps-injected" src="./Agile process _ Team Services &amp; TFS_files/Combined(3).js"></script><meta name="ms.perf.timing" content=",,5,5,5,14,1030,1035,1038,1365,1365,1375,1888,1888,"><script type="text/javascript" src="./Agile process _ Team Services &amp; TFS_files/ms.js"></script><script type="text/javascript" src="./Agile process _ Team Services &amp; TFS_files/jsll-3.2.0.js"></script><link rel="stylesheet" type="text/css" href="./Agile process _ Team Services &amp; TFS_files/open-rating.ui-v0.6.1-46-g01ff629.master.min.css"></head>
+<body class="Chrome">
+    <div id="page">
+
+        
+
+        
+    
+
+        
+
+
+        
+        
+    <input type="hidden" id="theme" value="visualstudio">
+    <input type="hidden" id="isHeaderBleeding" value="true">
+    <div id="ux-header" class="Chrome ltr" data-device-type="desktop">
+        
+
+        <span id="isMobile"></span>
+        <div class="upperBand">
+            <div class="upperBandContent">
+                <div class="left">
+                    <div data-fragmentname="SiteLogoLink" id="Fragment_SiteLogoLink" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://www.visualstudio.com/" title="Visual Studio" id="SiteLogoLink_43189_1" xmlns="http://www.w3.org/1999/xhtml">https://www.visualstudio.com</a>
+</div>
+                </div>
+                <div class="right">
+                    <div class="profileImage"></div>
+                    <div data-fragmentname="SubscriptionsLink" id="Fragment_SubscriptionsLink" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://msdn.microsoft.com/subscriptions/manage/hh442900" title="Click to access your MSDN subscription benefits" id="SubscriptionsLink_43189_3" xmlns="http://www.w3.org/1999/xhtml">MSDN Subscriptions</a>
+</div>
+                    <div id="signIn">
+<a class=" createProfileLink" href="https://app.vsaex.visualstudio.com/go/profile?wt.mc_id=o~msft~vscom~signin" title="quangnhat684">quangnhat684</a>
+<a class="scarabLink" href="https://app.vssps.visualstudio.com/_signout">Sign out</a></div>
+
+    
+
+<div data-fragmentname="SearchBox" id="Fragment_SearchBox" xmlns="http://www.w3.org/1999/xhtml" style="width: 34px;">
+  <div class="SearchBox">
+    <form id="HeaderSearchForm" name="HeaderSearchForm" method="get" style="width: 309px;">
+      <input id="HeaderSearchTextBox" name="query" type="text" maxlength="200" onfocus="Epx.Controls.SearchBox.watermarkFocus(this, this.title, &#39;SearchBoxOnFocus&#39;)" onblur="return Epx.Controls.SearchBox.watermarkBlur(this, this.title, &#39;SearchBoxOnFocus&#39;)" autocomplete="off" data-searchtype="searchbox" data-pgarea="header">
+      <input id="RefinementId" name="refinement" type="hidden" value="198">
+      <button id="HeaderSearchButton" value="" type="submit" class="header-search-button" data-searchtype="icon" data-pgarea="header" title="Search here"></button>
+    <div id="SearchFlyoutContainer" style="display: none; text-align: left; border: 1px solid buttonshadow; position: absolute; z-index: 1000; padding: 2px; color: rgb(255, 255, 255); font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 15.0791px; background-color: rgb(255, 255, 255);"><div id="SuggestionContainer"><ul data-pgarea="header" data-searchtype="search dropdown" style="list-style: none; padding: 4px 2px 0px 1px; cursor: pointer; margin: 1px; white-space: nowrap;"></ul></div></div></form>
+    <a tabindex="0" class="metroSearchButton" onclick="Epx.Controls.SearchBox.metroButtonClick(this)" title="Search here"></a>
+  </div>
+  
+  
+</div>                </div>
+                <div class="clear-both"></div>
+            </div>
+        </div>
+
+        <div class="middleBand signedIn" style="display: none;">
+            <div class="middleBandContent">
+                <div class="left">
+
+                </div>
+                <div class="right">
+
+                </div>
+                <div class="clear-both"></div>
+            </div>
+        </div>
+
+        <div class="lowerBand">
+            <div class="lowerBandContent">
+                <a id="grip" class="menu-icon" href="javascript:void(0)"></a>
+                <div id="desktopTocContainer">
+                    <div id="drawer">
+                        <div class="toc">
+                            
+        <nav>
+            <ul class="navL1">
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Products">Products</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Top Products">Top Products</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/vs-2015-product-editions" title="Visual Studio 2015 Products">Visual Studio 2015 Products</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/visual-studio-enterprise-vs" title="Visual Studio Enterprise">Visual Studio Enterprise</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/visual-studio-professional-with-msdn-vs" title="Visual Studio Professional">Visual Studio Professional</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/visual-studio-community-vs" title="Visual Studio Community">Visual Studio Community</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/code-vs" title="Visual Studio Code">Visual Studio Code</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/visual-studio-team-services-vs" title="Visual Studio Team Services">Visual Studio Team Services</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/tfs-overview-vs" title="Team Foundation Server">Team Foundation Server</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Other Products">Other Products</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/visual-studio-test-professional-with-msdn-vs" title="Visual Studio Test Professional">Visual Studio Test Professional</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/team-explorer-everywhere-vs" title="Team Explorer Everywhere">Team Explorer Everywhere</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/application-insights-vs" title="Application Insights">Application Insights</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/msdn-platforms-vs" title="MSDN Platforms">MSDN Platforms</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/hockey-app-vs" title="HockeyApp">HockeyApp</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/visual-studio-express-vs" title="Visual Studio Express">Visual Studio Express</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="How to Buy">How to Buy</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/how-to-buy-vs" title="Visual Studio">Visual Studio</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/visual-studio-team-services-pricing-vs" title="Visual Studio Team Services">Visual Studio Team Services</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Compare">Compare</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/compare-visual-studio-2015-products-vs" title="Compare Visual Studio 2015 Offerings">Compare Visual Studio 2015 Offerings</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/products/visual-studio-team-services-feature-matrix-vs" title="Visual Studio Team Services Feature Matrix">Visual Studio Team Services Feature Matrix</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Features">Features</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Application Development">Application Development</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/mobile-app-development-vs" title="Mobile">Mobile</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/modern-web-tooling-vs" title="Web">Web</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/azure-tools-vs" title="Cloud">Cloud</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/windows-apps-games-vs" title="Windows">Windows</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/office-tools-vs" title="Office Tools">Office Tools</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/game-development-vs" title="Games">Games</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/node-js-vs" title="Node.js">Node.js</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/cplusplus" title="Visual C++">Visual C++</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/python-vs" title="Python">Python</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/net-development-vs" title=".NET">.NET</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Lifecycle Management">Lifecycle Management</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/alm-devops-vs" title="DevOps and ALM">DevOps and ALM</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/agiletools-vs" title="Agile Software Development">Agile Software Development</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/version-control-vs" title="Version Control">Version Control</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/java-vs" title="Tools for Java teams">Tools for Java teams</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/release-management-vs" title="Release Management">Release Management</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/reporting-vs" title="Reporting">Reporting</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/vso-cloud-load-testing-vs" title="Cloud-Based Load Testing">Cloud-Based Load Testing</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/continuous-integration-vs" title="Continuous Integration">Continuous Integration</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/testing-tools-vs" title="Testing Tools">Testing Tools</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Extend and Integrate">Extend and Integrate</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/docs/integrate/explore/overview" title="Overview">Overview</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/docs/integrate/explore/explore-vside-vsi" title="Visual Studio">Visual Studio</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/docs/explore-vso-vsi" title="Visual Studio Team Services">Visual Studio Team Services</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="http://go.microsoft.com/fwlink/?linkid=691811" title="Visual Studio Code">Visual Studio Code</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Downloads">Downloads</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Top Downloads">Top Downloads</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://go.microsoft.com/fwlink/?linkid=691979&amp;clcid=0x409" title="Visual Studio Enterprise">Visual Studio Enterprise</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://go.microsoft.com/fwlink/?linkid=691978&amp;clcid=0x409" title="Visual Studio Community">Visual Studio Community</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://code.visualstudio.com/download" title="Visual Studio Code">Visual Studio Code</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://go.microsoft.com/fwlink/?linkid=615439&amp;clcid=0x409" title="Team Foundation Server">Team Foundation Server</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive toggle">
+                                            <a href="javascript:void(0)" title="Extensions and Integrations">Extensions and Integrations</a>
+
+                                                <ul class="navL3" style="display: none;">
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/cordova-vs" title="Visual Studio Tools for Apache Cordova">Visual Studio Tools for Apache Cordova</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/unitytools-vs" title="Visual Studio Tools for Unity">Visual Studio Tools for Unity</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://nodejstools.codeplex.com/" title="Node.js Tools for Visual Studio">Node.js Tools for Visual Studio</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/python-vs" title="Python Tools for Visual Studio">Python Tools for Visual Studio</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://blogs.msdn.com/b/dotnet/p/nugetpackages.aspx" title=".NET Nuget Packages">.NET Nuget Packages</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://visualstudiogallery.msdn.microsoft.com/" title="Visual Studio Gallery">Visual Studio Gallery</a>
+                                                        </li>
+                                                        <li class="inactive">
+                                                            <a href="https://www.visualstudio.com/features/vso-integrations-directory-vs" title="Visual Studio Team Services Integrations">Visual Studio Team Services Integrations</a>
+                                                        </li>
+                                                </ul>
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" title="All Downloads">All Downloads</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+                        <li class="inactive">
+                            <a href="https://www.visualstudio.com/news-overview-vs" title="News">News</a>
+                        </li>
+                        <li class="inactive">
+                            <a href="https://www.visualstudio.com/support-overview-vs" title="Support">Support</a>
+                        </li>
+                        <li class="inactive">
+                            <a href="http://marketplace.visualstudio.com/" title="Marketplace">Marketplace</a>
+                        </li>
+                        <li class="inactive toggle">
+                            <a href="javascript:void(0)" title="Documentation">Documentation</a>
+                                <ul class="navL2" style="display: none;">
+                                        <li class="inactive">
+                                            <a href="https://www.visualstudio.com/get-started/get-started-vs" title="Visual Studio on MSDN">Visual Studio on MSDN</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://www.visualstudio.com/get-started/overview-of-get-started-tasks-vs" title="Visual Studio Team Services">Visual Studio Team Services</a>
+
+                                                   
+                                        </li>
+                                        <li class="inactive">
+                                            <a href="https://code.visualstudio.com/docs" title="Visual Studio Code">Visual Studio Code</a>
+
+                                                   
+                                        </li>
+                                </ul>
+                        </li>
+            </ul>
+        </nav>
+
+                        </div>
+                    </div>
+                </div>
+                <div data-fragmentname="GetStartedLink" id="Fragment_GetStartedLink" xmlns="http://www.w3.org/1999/xhtml">
+  <a href="https://www.visualstudio.com/products/free-developer-offers-vs" title="Free Visual Studio" id="GetStartedLink_43189_6" xmlns="http://www.w3.org/1999/xhtml">
+    <span lang="EN-US" style="line-height:107%;font-family:&#39;Calibri&#39;,sans-serif;font-size:11pt;" xmlns="">Free Visual Studio</span>
+  </a>
+</div>
+                <div class="clear-both"></div>
+            </div>
+        </div>
+    <div id="overlayMaskHeader"></div></div>
+        
+   
+
+
+
+
+
+<div id="mobileMenu" data-spy="affix" data-offset-top="84">
+    <div id="tocDropdownMenuButton">
+        <div class="tocLabel">Table of contents<div class="dropDownIcon"></div></div>
+        <div id="tocDropdownMenu">
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/overview" title="Agile tools" class="">Agile tools</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/plan" title="Get started">Get started</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/connect/change-access-levels" title="Change access levels">Change access levels</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/connect/work-as-a-stakeholder" title="Stakeholder access">Stakeholder access</a>
+        </div>
+        </div>
+
+        </div><div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Backlogs" class="tocContainer">Backlogs</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/create-your-backlog" title="Create your backlog">Create your backlog</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/add-work-items" title="Add work items (Team Services)">Add work items (Team Services)</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/add-work-items-tfs" title="Add work items (TFS)">Add work items (TFS)</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/manage-bugs" title="Manage bugs">Manage bugs</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/organize-backlog" title="Organize your backlog">Organize your backlog</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/bulk-modify-work-items" title="Bulk modify work items">Bulk modify work items</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/remove-delete-work-items" title="Move, change, or delete work items">Move, change, or delete work items</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/office/storyboard-your-ideas-using-powerpoint" title="Storyboard your ideas">Storyboard your ideas</a>
+        </div>
+        </div>
+
+        </div><div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Scrum" class="tocContainer">Scrum</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/sprint-planning" title="Sprint planning">Sprint planning</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/define-sprints" title="Define sprints">Define sprints</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/task-board" title="Task board">Task board</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/capacity-planning" title="Capacity planning">Capacity planning</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/sprint-burndown" title="Sprint burndown">Sprint burndown</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/velocity-and-forecasting" title="Velocity &amp; forecasting">Velocity &amp; forecasting</a>
+        </div>
+        </div>
+
+        </div><div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Kanban" class="tocContainer">Kanban</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/kanban-basics" title="Kanban basics">Kanban basics</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/kanban-epics-features-stories" title="Epics &amp; features">Epics &amp; features</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/add-task-checklists" title="Add task checklists">Add task checklists</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/add-columns" title="Add columns">Add columns</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/wip-limits" title="WIP limits">WIP limits</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/expedite-work" title="Expedite work">Expedite work</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/split-columns" title="Split columns">Split columns</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/definition-of-done" title="Definition of done">Definition of done</a>
+        </div>
+        </div>
+
+        </div><div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Track" class="tocContainer">Track</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/using-queries" title="Using queries">Using queries</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd286638.aspx" title="Query operators and variables">Query operators and variables</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/add-tags-to-work-items" title="Add tags to work items">Add tags to work items</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/follow-work-items" title="Follow work items">Follow work items</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/share-plans" title="Share work plans">Share work plans</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/alerts-and-notifications" title="Set alerts">Set alerts</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/link-work-items-support-traceability" title="Link work items" class="">Link work items</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd997890.aspx" title="Link controls, restrictions, and field reference">Link controls, restrictions, and field reference</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd293527.aspx" title="Link type element reference">Link type element reference</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Query examples" class="tocContainer">Query examples</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/query-by-workflow-changes" title="Query by workflow or board changes">Query by workflow or board changes</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/query-by-date-or-current-iteration" title="Query by date or current iteration">Query by date or current iteration</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/history-and-auditing" title="History &amp; auditing">History &amp; auditing</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/cc668120.aspx" title="Example search box queries">Example search box queries</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd576358.aspx" title="Example work item queries">Example work item queries</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Track feedback" class="tocContainer">Track feedback</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/connect/get-feedback" title="Get feedback">Get feedback</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/connect/give-feedback" title="Provide feedback">Provide feedback</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/connect/give-permissions-feedback" title="Set feedback permissions">Set feedback permissions</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/set-query-permissions" title="Set query permissions">Set query permissions</a>
+        </div>
+        </div>
+
+        </div><div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Scale" class="tocContainer">Scale</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/culture" title="Culture">Culture</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/set-team-defaults" title="Set team defaults">Set team defaults</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/multiple-teams" title="Multiple teams">Multiple teams</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/manage-team-assets" title="Manage team assets">Manage team assets</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/portfolio-management" title="Portfolio management">Portfolio management</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/practices-that-scale" title="Practices that scale">Practices that scale</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/scaled-agile-framework" title="Scaled Agile Framework">Scaled Agile Framework</a>
+        </div>
+        </div>
+
+        </div><div class="tocSelected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocExpanded" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Thu gọn bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Process guidance" class="tocContainer">Process guidance</a>
+        </div>
+        <div class="tocPadding">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/choose-process" title="Choose a process">Choose a process</a>
+        </div>
+        <div class="tocLevel current">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process" title="Agile process">Agile process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process-workflow" title="Agile work item types and workflow">Agile work item types and workflow</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/cmmi-process" title="CMMI process">CMMI process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/cmmi-process-workflow" title="CMMI work item types and workflow">CMMI work item types and workflow</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/scrum-process" title="Scrum process">Scrum process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/scrum-process-workflow" title="Scrum work item types and workflow">Scrum work item types and workflow</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/work-item-field-index" title="Field index">Field index</a>
+        </div>
+        </div>
+
+        </div><div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Productivity" class="tocContainer">Productivity</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/productivity/productivity-tips" title="Productivity tips">Productivity tips</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/connect-work-items-to-git-dev-ops" title="Drive Git development">Drive Git development</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/productivity/work-item-template" title="Work item templates">Work item templates</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/office/bulk-add-modify-work-items-excel" title="Bulk modify using Excel">Bulk modify using Excel</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/productivity/collaborate-in-a-team-room" title="Collaborate in a team room">Collaborate in a team room</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/jj920186.aspx" title="Share storyboard shapes">Share storyboard shapes</a>
+        </div>
+        </div>
+
+        </div><div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/customize-work" title="Customize work tracking" class="">Customize work tracking</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/modify-areas-iterations" title="Area and iteration paths">Area and iteration paths</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/customize-cards" title="Customize cards">Customize cards</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/add-modify-field" title="Data fields">Data fields</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/add-modify-wit" title="Work item types">Work item types</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/customize-agile-tools" title="Agile tools">Agile tools</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Backlogs and boards" class="tocContainer">Backlogs and boards</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/show-bugs-on-backlog" title="Show bugs">Show bugs</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/add-wits-to-backlogs-and-boards" title="Add work item types">Add work item types</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/add-portfolio-backlogs" title="Add portfolio backlogs">Add portfolio backlogs</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Process (Team Services)" class="tocContainer">Process (Team Services)</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/manage-process" title="Manage processes">Manage processes</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/customize-process" title="Customize a process">Customize a process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/customize-process-field" title="Customize a field">Customize a field</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/customize-process-form" title="Customize a form">Customize a form</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/customize-process-workflow" title="Customize a workflow">Customize a workflow</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/new-work-item-experience" title="New work item experience">New work item experience</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Process import (Team Services)" class="tocContainer">Process import (Team Services)</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/import-process/import-process" title="Import a process">Import a process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/import-process/customize-process" title="Customize process for import">Customize process for import</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/import-process/differences" title="Differences between cloud and on-premises process customizations">Differences between cloud and on-premises process customizations</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/import-process/resolve-errors" title="Resolve validation errors">Resolve validation errors</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/new-form-layout" title="New form">New form</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/manage-new-form-rollout" title="Manage new form rollout">Manage new form rollout</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/customize-wit-form" title="Customize form layout">Customize form layout</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Process templates" class="tocContainer">Process templates</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/manage-process-templates" title="Manage process templates">Manage process templates</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/changes-to-process-templates" title="Changes made to process templates">Changes made to process templates</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms243782.aspx" title="Process template">Process template</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Feature enablement (TFS)" class="tocContainer">Feature enablement (TFS)</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/configure-features-after-upgrade" title="Configure features after an upgrade">Configure features after an upgrade</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/upgrade-tfs-2008-or-2010" title="Upgrade from TFS 2008 or TFS 2010">Upgrade from TFS 2008 or TFS 2010</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/new-features-added" title="New features added when you update TFS">New features added when you update TFS</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/additional-configuration-options" title="Additional configuration options">Additional configuration options</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/add-features-manually" title="Add features using a manual update process">Add features using a manual update process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/update-customized-process-template" title="Update a customized process template to access new features">Update a customized process template to access new features</a>
+        </div>
+        </div>
+        </div>
+
+        </div><div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="XML Reference" class="tocContainer">XML Reference</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/dn237344.aspx" title="XML element reference" class="">XML element reference</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337615.aspx" title="Work item tracking: Index to XML element definitions">Work item tracking: Index to XML element definitions</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms243932.aspx" title="All WITD elements">All WITD elements</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/ms194953.aspx" title="FIELD (Definition)" class="">FIELD (Definition)</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337627.aspx" title="FIELD (Definition) element reference">FIELD (Definition) element reference</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194980.aspx" title="Define and modify fields">Define and modify fields</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms404857.aspx" title="Apply a field rule">Apply a field rule</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194948.aspx" title="COPY, DEFAULT, and SERVERDEFAULT">COPY, DEFAULT, and SERVERDEFAULT</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/ms194947.aspx" title="ALLOWEDVALUES, SUGGESTEDVALUES, and PROHIBITEDVALUES" class="">ALLOWEDVALUES, SUGGESTEDVALUES, and PROHIBITEDVALUES</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194969.aspx" title="Expand list and exclude groups">Expand list and exclude groups</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194939.aspx" title="Combine list types">Combine list types</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194977.aspx" title="GLOBALLIST XML element reference">GLOBALLIST XML element reference</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms404842.aspx" title="MATCH: Apply pattern matching to a field">MATCH: Apply pattern matching to a field</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194966.aspx" title="WHEN, WHENNOT, WHENCHANGED, and WHENNOTCHANGED">WHEN, WHENNOT, WHENCHANGED, and WHENNOTCHANGED</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/gg534715.aspx" title="WORKFLOW elements" class="">WORKFLOW elements</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337626.aspx" title="FIELD (Workflow)">FIELD (Workflow)</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194990.aspx" title="ACTION">ACTION</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337653.aspx" title="TRANSITION">TRANSITION</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/hh500412.aspx" title="Update the workflow for Agile team projects">Update the workflow for Agile team projects</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/ms194963.aspx" title="All FORM elements" class="">All FORM elements</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337625.aspx" title="Control">Control</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd936113.aspx" title="LabelText and Text">LabelText and Text</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337635.aspx" title="Layout">Layout</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd936136.aspx" title="LinksControlOptions">LinksControlOptions</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd936107.aspx" title="Link and Param">Link and Param</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337671.aspx" title="Tab">Tab</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd936135.aspx" title="WebpageControlOptions">WebpageControlOptions</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd469527.aspx" title="Categories">Categories</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194977.aspx" title="Global lists">Global lists</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd293527.aspx" title="Link types">Link types</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/hh500408.aspx" title="Process configuration">Process configuration</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/reference/weblayout-xml-elements" title="WebLayout and Control elements (Team Services)">WebLayout and Control elements (Team Services)</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/dd236914.aspx" title="witAdmin command line reference" class="">witAdmin command line reference</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd312129.aspx" title="Import, export, and manage work item types">Import, export, and manage work item types</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd273721.aspx" title="Import and export categories">Import and export categories</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd236912.aspx" title="Manage global lists">Manage global lists</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/gg534717.aspx" title="Import and export global workflow">Import and export global workflow</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/hh500413.aspx" title="Import and export process configuration">Import and export process configuration</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd273716.aspx" title="Manage link types">Manage link types</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd236909.aspx" title="Manage work item fields">Manage work item fields</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd273722.aspx" title="Rebuild the client cache">Rebuild the client cache</a>
+        </div>
+        </div>
+        </div>
+
+        </div><div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="API SDK reference" class="tocContainer">API SDK reference</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd470570(v=vs.120).aspx" title="Extending Team Services and TFS">Extending Team Services and TFS</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/reference/api-ref/iprocess-templates-add-update-template" title="IProcessTemplates.AddUpdateTemplate">IProcessTemplates.AddUpdateTemplate</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/reference/api-ref/open" title="WorkItem.Open method">WorkItem.Open method</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/reference/api-ref/partialopen" title="WorkItem.PartialOpen method">WorkItem.PartialOpen method</a>
+        </div>
+        </div>
+
+        </div></div>
+    </div>
+    <div id="functionDropdownMenuButton">
+        <div class="moreToolIcon"></div>
+        <div id="functionDropdownMenu">
+        <div id="navigationButtons">
+                <a id="isdSmile" title="Feedback" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#">
+                    <ins class="smile"></ins>
+                    Feedback
+                </a>
+
+
+                <a id="isdShare" title="Chia sẻ" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#">
+                    <ins class="share"></ins>
+                    Chia sẻ
+                </a>
+                
+
+            </div></div>
+    </div>
+</div>
+<div id="mobileMenuSpaceHolder"></div>
+<div class="modal fade" id="mobileSocialShareModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <h2 class="modal-title">Shared to</h2>
+            <div class="modal-body" id="mobileSocialShare">
+            <div id="socials" style="">
+                    <a class="isdFacebook" title="Chia sẻ trên Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process" data-sitename="Facebook">
+                        <ins class="facebook"></ins>
+                    </a>
+                    <a class="isdTwitter" title="Chia sẻ trên Twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process&amp;text=Agile%20process%20%7C%20Team%20Services%20%26%20TFS&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process" data-sitename="Twitter">
+                        <ins class="twitter"></ins>
+                    </a>
+                    <a class="isdGooglePlus" title="Chia sẻ trên Google+" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process" data-sitename="Google+">
+                        <ins class="googlePlus"></ins>
+                    </a>
+                </div></div>
+            <div class="mobileSocialShareModalDialogFooter">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal" id="mobileBranchSelectorModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="mobileBranchSelector">
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+</div>
+<div id="tabletContainerWithoutBreadcrumbs"></div>
+
+
+
+
+    <div id="breadcrumbs" ms.pgarea="body" ms.cmpgrp="breadcrumbs">
+        <div id="breadcrumbDesktop" class="breadCrumb">
+                <span><a href="https://www.visualstudio.com/docs/overview" title="Team Services"><span>Team Services</span></a></span>
+                <span><a href="https://www.visualstudio.com/docs/work/overview" title="Work"><span>Work</span></a></span>
+        </div>
+        <div id="breadcrumbTablet" class="breadCrumb">
+                    <span><a href="https://www.visualstudio.com/docs/overview" title="Team Services"><span>Team Services</span></a></span>
+                    <span><a href="https://www.visualstudio.com/docs/work/overview" title="Work"><span>Work</span></a></span>
+                <span class="breadcrumbDropSmall"><a id="tocDropDownButton" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Agile process | Team Services &amp; TFS"><span>Agile process | Team Services &amp; TFS</span></a></span>
+        <div id="navigationButtons">
+                <a id="isdSmile" title="Feedback" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#">
+                    <ins class="smile"></ins>
+                    Feedback
+                </a>
+
+
+                <a id="isdShare" title="Chia sẻ" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#">
+                    <ins class="share"></ins>
+                    Chia sẻ
+                </a>
+                <div id="socials" style="display: none">
+                    <a class="isdFacebook" title="Chia sẻ trên Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process" data-sitename="Facebook">
+                        <ins class="facebook"></ins>
+                    </a>
+                    <a class="isdTwitter" title="Chia sẻ trên Twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process&amp;text=Agile%20process%20%7C%20Team%20Services%20%26%20TFS&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process" data-sitename="Twitter">
+                        <ins class="twitter"></ins>
+                    </a>
+                    <a class="isdGooglePlus" title="Chia sẻ trên Google+" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process" data-sitename="Google+">
+                        <ins class="googlePlus"></ins>
+                    </a>
+                </div>
+
+            </div></div>
+        <div id="breadcrumbMobile" class="breadCrumb">
+                <span class="breadcrumbEllipsis"><a href="https://www.visualstudio.com/docs/work/overview" title="Work"></a></span>
+            <span class="breadcrumbDropSmall"><a id="tocPopupButton" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Agile process | Team Services &amp; TFS"><span>Agile process | Team Services &amp; TFS</span></a></span>
+        </div>
+    </div>
+
+        <div id="body" ms.pgarea="body">
+            
+
+
+
+
+
+
+<div id="threeColumns">
+    <div id="leftColumn" class="left" ms.cmpgrp="left toc">
+        <div id="tocNav">
+    <div class="tocRootContainer">
+        <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" class="tocRoot" title="Mục lục">Mục lục</a> 
+        <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" class="tocRootIcon" title="Mục lục">+</a>
+    </div>
+    <div class="tocData hidden">
+                <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/overview" title="Agile tools" class="">Agile tools</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/plan" title="Get started">Get started</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/connect/change-access-levels" title="Change access levels">Change access levels</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/connect/work-as-a-stakeholder" title="Stakeholder access">Stakeholder access</a>
+        </div>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Backlogs" class="tocContainer">Backlogs</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/create-your-backlog" title="Create your backlog">Create your backlog</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/add-work-items" title="Add work items (Team Services)">Add work items (Team Services)</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/add-work-items-tfs" title="Add work items (TFS)">Add work items (TFS)</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/manage-bugs" title="Manage bugs">Manage bugs</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/organize-backlog" title="Organize your backlog">Organize your backlog</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/bulk-modify-work-items" title="Bulk modify work items">Bulk modify work items</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/remove-delete-work-items" title="Move, change, or delete work items">Move, change, or delete work items</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/office/storyboard-your-ideas-using-powerpoint" title="Storyboard your ideas">Storyboard your ideas</a>
+        </div>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Scrum" class="tocContainer">Scrum</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/sprint-planning" title="Sprint planning">Sprint planning</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/define-sprints" title="Define sprints">Define sprints</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/task-board" title="Task board">Task board</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/capacity-planning" title="Capacity planning">Capacity planning</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/sprint-burndown" title="Sprint burndown">Sprint burndown</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/velocity-and-forecasting" title="Velocity &amp; forecasting">Velocity &amp; forecasting</a>
+        </div>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Kanban" class="tocContainer">Kanban</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/kanban-basics" title="Kanban basics">Kanban basics</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/kanban-epics-features-stories" title="Epics &amp; features">Epics &amp; features</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/add-task-checklists" title="Add task checklists">Add task checklists</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/add-columns" title="Add columns">Add columns</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/wip-limits" title="WIP limits">WIP limits</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/expedite-work" title="Expedite work">Expedite work</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/split-columns" title="Split columns">Split columns</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/definition-of-done" title="Definition of done">Definition of done</a>
+        </div>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Track" class="tocContainer">Track</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/using-queries" title="Using queries">Using queries</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd286638.aspx" title="Query operators and variables">Query operators and variables</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/add-tags-to-work-items" title="Add tags to work items">Add tags to work items</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/follow-work-items" title="Follow work items">Follow work items</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/share-plans" title="Share work plans">Share work plans</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/alerts-and-notifications" title="Set alerts">Set alerts</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/link-work-items-support-traceability" title="Link work items" class="">Link work items</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd997890.aspx" title="Link controls, restrictions, and field reference">Link controls, restrictions, and field reference</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd293527.aspx" title="Link type element reference">Link type element reference</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Query examples" class="tocContainer">Query examples</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/query-by-workflow-changes" title="Query by workflow or board changes">Query by workflow or board changes</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/query-by-date-or-current-iteration" title="Query by date or current iteration">Query by date or current iteration</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/history-and-auditing" title="History &amp; auditing">History &amp; auditing</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/cc668120.aspx" title="Example search box queries">Example search box queries</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd576358.aspx" title="Example work item queries">Example work item queries</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Track feedback" class="tocContainer">Track feedback</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/connect/get-feedback" title="Get feedback">Get feedback</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/connect/give-feedback" title="Provide feedback">Provide feedback</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/connect/give-permissions-feedback" title="Set feedback permissions">Set feedback permissions</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/track/set-query-permissions" title="Set query permissions">Set query permissions</a>
+        </div>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Scale" class="tocContainer">Scale</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/culture" title="Culture">Culture</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/set-team-defaults" title="Set team defaults">Set team defaults</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/multiple-teams" title="Multiple teams">Multiple teams</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/manage-team-assets" title="Manage team assets">Manage team assets</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/portfolio-management" title="Portfolio management">Portfolio management</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/practices-that-scale" title="Practices that scale">Practices that scale</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/scale/scaled-agile-framework" title="Scaled Agile Framework">Scaled Agile Framework</a>
+        </div>
+        </div>
+
+        </div>
+        <div class="tocSelected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocExpanded" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Thu gọn bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Process guidance" class="tocContainer">Process guidance</a>
+        </div>
+        <div class="tocPadding">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/choose-process" title="Choose a process">Choose a process</a>
+        </div>
+        <div class="tocLevel current">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process" title="Agile process">Agile process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process-workflow" title="Agile work item types and workflow">Agile work item types and workflow</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/cmmi-process" title="CMMI process">CMMI process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/cmmi-process-workflow" title="CMMI work item types and workflow">CMMI work item types and workflow</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/scrum-process" title="Scrum process">Scrum process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/scrum-process-workflow" title="Scrum work item types and workflow">Scrum work item types and workflow</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/work-item-field-index" title="Field index">Field index</a>
+        </div>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Productivity" class="tocContainer">Productivity</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/productivity/productivity-tips" title="Productivity tips">Productivity tips</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/connect-work-items-to-git-dev-ops" title="Drive Git development">Drive Git development</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/productivity/work-item-template" title="Work item templates">Work item templates</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/office/bulk-add-modify-work-items-excel" title="Bulk modify using Excel">Bulk modify using Excel</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/productivity/collaborate-in-a-team-room" title="Collaborate in a team room">Collaborate in a team room</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/jj920186.aspx" title="Share storyboard shapes">Share storyboard shapes</a>
+        </div>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/customize-work" title="Customize work tracking" class="">Customize work tracking</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/modify-areas-iterations" title="Area and iteration paths">Area and iteration paths</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/customize-cards" title="Customize cards">Customize cards</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/add-modify-field" title="Data fields">Data fields</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/add-modify-wit" title="Work item types">Work item types</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/customize-agile-tools" title="Agile tools">Agile tools</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Backlogs and boards" class="tocContainer">Backlogs and boards</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/show-bugs-on-backlog" title="Show bugs">Show bugs</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/add-wits-to-backlogs-and-boards" title="Add work item types">Add work item types</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/add-portfolio-backlogs" title="Add portfolio backlogs">Add portfolio backlogs</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Process (Team Services)" class="tocContainer">Process (Team Services)</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/manage-process" title="Manage processes">Manage processes</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/customize-process" title="Customize a process">Customize a process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/customize-process-field" title="Customize a field">Customize a field</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/customize-process-form" title="Customize a form">Customize a form</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/customize-process-workflow" title="Customize a workflow">Customize a workflow</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/process/new-work-item-experience" title="New work item experience">New work item experience</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Process import (Team Services)" class="tocContainer">Process import (Team Services)</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/import-process/import-process" title="Import a process">Import a process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/import-process/customize-process" title="Customize process for import">Customize process for import</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/import-process/differences" title="Differences between cloud and on-premises process customizations">Differences between cloud and on-premises process customizations</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/import-process/resolve-errors" title="Resolve validation errors">Resolve validation errors</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/new-form-layout" title="New form">New form</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/manage-new-form-rollout" title="Manage new form rollout">Manage new form rollout</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/customize-wit-form" title="Customize form layout">Customize form layout</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Process templates" class="tocContainer">Process templates</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/manage-process-templates" title="Manage process templates">Manage process templates</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/changes-to-process-templates" title="Changes made to process templates">Changes made to process templates</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms243782.aspx" title="Process template">Process template</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="Feature enablement (TFS)" class="tocContainer">Feature enablement (TFS)</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/configure-features-after-upgrade" title="Configure features after an upgrade">Configure features after an upgrade</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/upgrade-tfs-2008-or-2010" title="Upgrade from TFS 2008 or TFS 2010">Upgrade from TFS 2008 or TFS 2010</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/new-features-added" title="New features added when you update TFS">New features added when you update TFS</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/additional-configuration-options" title="Additional configuration options">Additional configuration options</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/add-features-manually" title="Add features using a manual update process">Add features using a manual update process</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/update-customized-process-template" title="Update a customized process template to access new features">Update a customized process template to access new features</a>
+        </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="XML Reference" class="tocContainer">XML Reference</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/dn237344.aspx" title="XML element reference" class="">XML element reference</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337615.aspx" title="Work item tracking: Index to XML element definitions">Work item tracking: Index to XML element definitions</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms243932.aspx" title="All WITD elements">All WITD elements</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/ms194953.aspx" title="FIELD (Definition)" class="">FIELD (Definition)</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337627.aspx" title="FIELD (Definition) element reference">FIELD (Definition) element reference</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194980.aspx" title="Define and modify fields">Define and modify fields</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms404857.aspx" title="Apply a field rule">Apply a field rule</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194948.aspx" title="COPY, DEFAULT, and SERVERDEFAULT">COPY, DEFAULT, and SERVERDEFAULT</a>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/ms194947.aspx" title="ALLOWEDVALUES, SUGGESTEDVALUES, and PROHIBITEDVALUES" class="">ALLOWEDVALUES, SUGGESTEDVALUES, and PROHIBITEDVALUES</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194969.aspx" title="Expand list and exclude groups">Expand list and exclude groups</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194939.aspx" title="Combine list types">Combine list types</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194977.aspx" title="GLOBALLIST XML element reference">GLOBALLIST XML element reference</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms404842.aspx" title="MATCH: Apply pattern matching to a field">MATCH: Apply pattern matching to a field</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194966.aspx" title="WHEN, WHENNOT, WHENCHANGED, and WHENNOTCHANGED">WHEN, WHENNOT, WHENCHANGED, and WHENNOTCHANGED</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/gg534715.aspx" title="WORKFLOW elements" class="">WORKFLOW elements</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337626.aspx" title="FIELD (Workflow)">FIELD (Workflow)</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194990.aspx" title="ACTION">ACTION</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337653.aspx" title="TRANSITION">TRANSITION</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/hh500412.aspx" title="Update the workflow for Agile team projects">Update the workflow for Agile team projects</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/ms194963.aspx" title="All FORM elements" class="">All FORM elements</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337625.aspx" title="Control">Control</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd936113.aspx" title="LabelText and Text">LabelText and Text</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337635.aspx" title="Layout">Layout</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd936136.aspx" title="LinksControlOptions">LinksControlOptions</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd936107.aspx" title="Link and Param">Link and Param</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/aa337671.aspx" title="Tab">Tab</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd936135.aspx" title="WebpageControlOptions">WebpageControlOptions</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd469527.aspx" title="Categories">Categories</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/ms194977.aspx" title="Global lists">Global lists</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd293527.aspx" title="Link types">Link types</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/hh500408.aspx" title="Process configuration">Process configuration</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/reference/weblayout-xml-elements" title="WebLayout and Control elements (Team Services)">WebLayout and Control elements (Team Services)</a>
+        </div>
+        </div>
+        <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://msdn.microsoft.com/library/dd236914.aspx" title="witAdmin command line reference" class="">witAdmin command line reference</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd312129.aspx" title="Import, export, and manage work item types">Import, export, and manage work item types</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd273721.aspx" title="Import and export categories">Import and export categories</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd236912.aspx" title="Manage global lists">Manage global lists</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/gg534717.aspx" title="Import and export global workflow">Import and export global workflow</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/hh500413.aspx" title="Import and export process configuration">Import and export process configuration</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd273716.aspx" title="Manage link types">Manage link types</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd236909.aspx" title="Manage work item fields">Manage work item fields</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd273722.aspx" title="Rebuild the client cache">Rebuild the client cache</a>
+        </div>
+        </div>
+        </div>
+
+        </div>
+        <div class="tocUnselected tocLevel1">
+                    <div class="tocLevel">
+            <a class="tocCollapsed" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" label="Mở rộng bảng nội dung"></a>
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" title="API SDK reference" class="tocContainer">API SDK reference</a>
+        </div>
+        <div class="tocPadding hidden">
+        <div class="tocLevel">
+            <a href="https://msdn.microsoft.com/library/dd470570(v=vs.120).aspx" title="Extending Team Services and TFS">Extending Team Services and TFS</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/reference/api-ref/iprocess-templates-add-update-template" title="IProcessTemplates.AddUpdateTemplate">IProcessTemplates.AddUpdateTemplate</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/reference/api-ref/open" title="WorkItem.Open method">WorkItem.Open method</a>
+        </div>
+        <div class="tocLevel">
+            <a href="https://www.visualstudio.com/vi-vn/docs/work/reference/api-ref/partialopen" title="WorkItem.PartialOpen method">WorkItem.PartialOpen method</a>
+        </div>
+        </div>
+
+        </div>
+
+    </div>
+    <a id="tocMenuToggler" href="javascript:void(0);">
+        <span id="tocMenuTogglerIcon"></span>
+        <div id="tocMenuTogglerLabel">TOC</div>
+    </a>
+</div>
+
+
+
+        <div style="display:none">
+            <div id="CollapseLocalizeString">Thu gọn bảng nội dung</div>
+            <div id="ExpandLocalizeString">Mở rộng bảng nội dung</div>
+        </div>
+    </div>
+    <div class="main" ms.cmpgrp="content body">
+        <div id="oaContent" class="row"><div class="" id="api-doc-contents"><h1 id="agile-process">Agile process</h1><div id="movileInPageNav"><ul id="mobile-task-nav-list" class="" ms.cmpgrp="indoc toc"><li class="nav-header">TRONG BÀI VIẾT NÀY</li><li><a class="" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#plan-and-track-work">Plan and track work</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#list-work-items-using-queries">List work items using queries</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#quick-tips">Quick tips</a></li><li><a class="" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#monitor-progress">Monitor progress</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#create-light-weight-charts">Create light-weight charts</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#power-bi-reports-team-services">Power BI reports (Team Services)</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#sql-server-reports-tfs">SQL Server reports (TFS)</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#sharepoint-portal-dashboards-tfs">SharePoint portal dashboards (TFS)</a></li><li><a class="" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#related-notes">Related notes</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#agile-process-predefined-queries">Agile process predefined queries</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#workbooks-tfs">Workbooks (TFS)</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#provide-feedback">Provide feedback</a></li></ul></div><span></span><p><b>Team Services | TFS 2015 | <a href="https://msdn.microsoft.com/library/dd380647%28v=vs.120%29.aspx">Previous versions</a></b></p><p>The Agile process supports the following work item types (WITs) to plan and track work, tests, feedback, and code review. With different WITs you can track different types of work—such as features, user stories, and tasks. These artifacts are created when you create a team project using the Agile  process. They are based on Agile principles and values.  </p><p><img src="./Agile process _ Team Services &amp; TFS_files/agile-process-work-tracking-wits.png" alt="Agile process work item types" style="border: 1px solid #CCCCCC;"></p><p>In addition to the WITs, teams have access to a set of shared work item queries to track information, analyze progress, and make decisions.  </p><blockquote style="font-size: 13px"><b>Feature availability: </b><p>From the cloud-based Team Services, you’ll always have access to the latest version of the Agile process, <a href="https://www.visualstudio.com/vi-vn/docs/work/process/customize-process">which you can also customize</a>.</p><p>If you connect to an on-premises Team Foundation Server (TFS), the latest version of the Agile process uploads automatically when you install or upgrade to the latest version of TFS. You can <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/customize-work">customize team projects</a> and use the <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/manage-process-templates">Process Template Manager</a> to upload and download process templates. </p><p>Additional artifacts, such as <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#reports">SQL Server reports</a> and <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#dashboards">SharePoint dashboards</a>, are only available when you connect to a team project from an on-premises Team Foundation Server (TFS). Other resource requirements apply. </p></blockquote><h2 id="plan-and-track-work">Plan and track work</h2><p>You build your project plan by creating a backlog of user stories that represent the work you want to develop and ship. You track bugs, tasks, and blocking issues using the bug, task, and issue WITs. To support portfolio management, teams create features and epics to view a roll up of user stories within or across teams. For details about using Agile WITs, see <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process-workflow">Agile process work item types and workflow</a>.  </p><p>The essential flow for getting started is as shown. To get started using Scrum or Kanban tools, see <a href="https://www.visualstudio.com/vi-vn/docs/work/plan">Get started with Agile tools to plan and track work</a>.  </p><p><a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/create-your-backlog"><img src="./Agile process _ Team Services &amp; TFS_files/gs-planning-define-stories.png" alt="Define stories"></a><a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/organize-backlog"><img src="./Agile process _ Team Services &amp; TFS_files/gs-planning-organize-backlog.png" alt="Organize backlog"></a><a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/manage-bugs"><img src="./Agile process _ Team Services &amp; TFS_files/gs-planning-manage-bugs.png" alt="Manage bugs"></a><a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/create-your-backlog#manage-impediments"><img src="./Agile process _ Team Services &amp; TFS_files/gs-planning-manage-issues.png" alt="Manage issues"></a></p><blockquote style="font-size: 13px"><b>Note: </b>A work item is a database record that contains the definition, assignment, priority, and state of work. Work item types define the template of fields, workflow, and form for each type. Work items can be linked to each other to support tracking dependencies, roll up of work, and reports.<br></blockquote><p><a id="shared-queries"></a></p><h3 id="list-work-items-using-queries">List work items using queries</h3><p>You can manage your workload more effectively by frequently reviewing the status of user stories and tasks. You can use the shared work item queries to list work items for a current sprint or the product backlog.  </p><p><img src="./Agile process _ Team Services &amp; TFS_files/ic667910.png" alt="Agile work item queries"></p><p><a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#predefined-queries">Descriptions of predefined queries</a> are listed later in this topic.  </p><p>You can open these queries from the <strong>Work/Queries</strong> page in the web portal or from the <strong>Work Items</strong> page in Team Explorer. You can modify a query using the <a href="https://www.visualstudio.com/vi-vn/docs/work/track/using-queries">query editor to apply different filter criteria</a>. Also, you can <a href="https://www.visualstudio.com/vi-vn/docs/report/dashboards">add queries to team dashboards</a>.  </p><p>From Team Explorer, you can open any <a href="https://www.visualstudio.com/vi-vn/docs/work/office/bulk-add-modify-work-items-excel">work item query in Excel</a> to perform bulk edits.   </p><h3 id="quick-tips">Quick tips</h3><p>Review these tips to learn how you can manage work more effectively:</p><ul><li>You can find work items that are assigned to you by opening one of the "My" shared queries. To open a query, select it and choose Enter.  </li><li>All valid users with standard access can create queries and folders under the <strong>My Queries</strong> area. To create queries and query folders under <strong>Shared Queries</strong> , you must have the Contribute permission set. For more information, see <a href="https://www.visualstudio.com/vi-vn/docs/work/track/set-query-permissions">Set permissions on queries</a>.</li><li>You can find work items that are neither resolved nor closed for the current iteration by using any of the <strong>Active</strong> or <strong>Open</strong> shared queries. For example, the <strong>Open User Stories</strong> query lists all stories that are Active and assigned to Iteration 1. You must update the query to point to the current iteration.  </li><li>You can modify any query by adding criteria to focus on a product area, an iteration, or another field. To modify a query, <a href="https://www.visualstudio.com/vi-vn/docs/work/track/using-queries">open the query editor</a>.   </li><li>You can open any query in <a href="https://www.visualstudio.com/vi-vn/docs/work/office/bulk-add-modify-work-items-excel">Excel</a> or <a href="https://int.msdn.microsoft.com/en-us/library/dd286701.aspx">Project</a>, where you can modify the query and publish your changes to the database for tracking work items.  </li><li>You can <a href="https://www.visualstudio.com/vi-vn/docs/report/charts">visualize progress</a> by creating a pie-chart, column chart, or other chart for flat-list queries.  </li><li>Each team should consider creating a team folder under the Shared Queries area and providing contributor permissions to the team members.</li></ul><h2 id="monitor-progress">Monitor progress</h2><p>All processes—Agile, Scrum, and CMMI—support <a href="https://www.visualstudio.com/vi-vn/docs/report/overview">building status and trend charts and dashboards</a>. In addition, several charts are automatically built based on the Agile tools you use. These charts display within the web portal. </p><h3 id="create-light-weight-charts">Create light-weight charts</h3><p>To get started, you can open a shared query and create a chart based on your tracking interests. Chart types include status—pie, bar, column, stacked bar, and pivot—and trend—stacked area, line, and area—charts.   </p><p><a href="https://www.visualstudio.com/vi-vn/docs/work/track/using-queries"><img src="./Agile process _ Team Services &amp; TFS_files/gs-chart-query.png" alt="Edit query"></a><a href="https://www.visualstudio.com/vi-vn/docs/report/charts"><img src="./Agile process _ Team Services &amp; TFS_files/gs-chart-create.png" alt="Create chart"></a><a href="https://www.visualstudio.com/vi-vn/docs/report/add-a-chart-dashboard"><img src="./Agile process _ Team Services &amp; TFS_files/gs-chart-add-dashboard.png" alt="Manage bugs"></a></p><p><a id="powerbi-reports"></a></p><h3 id="power-bi-reports-team-services">Power BI reports (Team Services)</h3><p>If you connect to Visual Studio Team Services, then you can use <a href="https://www.visualstudio.com/vi-vn/docs/report/powerbi/report-on-vso-with-power-bi-vs">Power BI to create charts and reports</a>. </p><p><a id="reports"></a></p><h3 id="sql-server-reports-tfs">SQL Server reports (TFS)</h3><p>If you connect to an on-premises TFS, you can access the following Agile process reports. For these reports to be useful, <a href="https://www.visualstudio.com/vi-vn/docs/report/admin/review-team-activities-for-useful-reports">teams must perform certain activities,</a> such as define build processes, link work items, and update status or remaining work.  </p><p>To access these reports, your team project collection and the team project must be configured with SQL Server Analysis Services and Reporting Services.  If you need to add reporting services or update reports to the latest versions, see <a href="https://www.visualstudio.com/vi-vn/docs/report/admin/add-reports-to-a-team-project">Add reports to a team project</a>.  </p><div style="float:left;width:220px;margin:8px;font-size:90%"><p style="font-weight:bold;padding-bottom:0px;text-align:center;">Project management reports</p><ul style="padding-left:10px"><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380678.aspx">Burndown and Burn Rate</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380673.aspx">Remaining Work</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380706.aspx">Status of All Iterations</a> (similar to Velocity)</li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380641.aspx">Stories Overview</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380641.aspx">Stories Progress</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/ee707132.aspx">Unplanned Work</a></li></ul></div><div style="float:left;width:220px;margin:8px;font-size:90%"><p style="font-weight:bold;padding-bottom:0px;text-align:center;">Test and bug reports</p><ul style="padding-left:20px"><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380736.aspx">Bug Status</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380674.aspx">Bug Trends</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380713.aspx">Test Case Readiness</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380702.aspx">Test Plan Progress</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380731.aspx">Reactivations</a></li></ul></div><div style="float:left;width:220px;margin:8px;font-size:90%"><p style="font-weight:bold;padding-bottom:0px;text-align:center;">Build reports</p><ul style="padding-left:20px"><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380683.aspx">Build Quality Indicators</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380643.aspx">Build Success Over Time</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd380708.aspx">Build Summary</a></li></ul></div><div style="clear:left;font-size:100%"></div><p><a id="dashboards"></a></p><h3 id="sharepoint-portal-dashboards-tfs">SharePoint portal dashboards (TFS)</h3><p>If you connect to an on-premises TFS, you can access Agile process dashboards displayed through SharePoint. These dashboards display project data, support investigation tasks, and help teams to perform common tasks quickly. The following dashboards support the display of web access parts for listing work items and reports that were built in the Analysis Services cube.</p><div style="float:left;width:220px;margin:8px;font-size:90%"><p style="font-weight:bold;padding-bottom:0px;text-align:center;">Standard dashboards</p><ul style="padding-left:20px"><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/ee828504.aspx">Project Dashboard</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd420561.aspx">My Dashboard</a></li></ul></div><div style="float:left;width:220px;margin:8px;font-size:90%"><p style="font-weight:bold;padding-bottom:0px;text-align:center;">Enterprise dashboards</p><ul style="padding-left:20px"><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd560860.aspx">Bugs Dashboard</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd420556.aspx">Build Dashboard</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd420557.aspx">Progress Dashboard</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd420562.aspx">Quality Dashboard</a></li><li style="margin-bottom:2px"><a href="https://msdn.microsoft.com/library/dd420548.aspx">Test Dashboard</a></li></ul></div><div style="clear:left;font-size:100%"></div><p>To use <a href="https://msdn.microsoft.com/library/dd380719.aspx">Dashboards</a> your team project must have a <a href="https://msdn.microsoft.com/library/ms242883.aspx">project portal configured and the project portal must point to a SharePoint site</a>.</p><h2 id="related-notes">Related notes</h2><p>Before you start tracking work, you must have a team project. To create one hosted in the cloud, see <a href="https://www.visualstudio.com/vi-vn/docs/setup-admin/team-services/sign-up-for-visual-studio-team-services">Sign up for Visual Studio Team Services</a>. To create one hosted on an on-premises TFS, see <a href="https://www.visualstudio.com/vi-vn/docs/setup-admin/create-team-project">Create a team project</a>.   </p><p>If you have a team project, start tracking work:  </p><ul><li><a href="https://www.visualstudio.com/vi-vn/docs/work/plan">Get started planning and tracking work</a> - for an overview of planning activities and tools  </li><li><a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/add-work-items">Add work items to manage a project</a> - to gain more familiarity with the work item form features  </li><li><a href="https://www.visualstudio.com/vi-vn/docs/work/backlogs/create-your-backlog">Create a backlog</a> - to develop your product backlog   </li><li><a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/sprint-planning">Plan a sprint</a>  - to start working in Scrum    </li><li><a href="https://www.visualstudio.com/vi-vn/docs/work/kanban/kanban-basics">Kanban</a>  - to start working in Kanban  </li><li><a href="https://www.visualstudio.com/vi-vn/docs/work/office/bulk-add-modify-work-items-excel">Excel</a> or <a href="https://msdn.microsoft.com/library/dd286701.aspx">Project</a> - to create a work breakdown structure   </li></ul><p>For more information on Agile tools:</p><ul><li><a href="https://www.visualstudio.com/vi-vn/docs/work/overview">Agile tools</a></li><li><a href="https://www.visualstudio.com/vi-vn/docs/work/scale/manage-team-assets">Team assets</a></li><li><a href="https://www.visualstudio.com/vi-vn/docs/work/customize/customize-agile-tools">Customize Agile tools</a></li></ul><p><a id="predefined-queries"></a></p><h3 id="agile-process-predefined-queries">Agile process predefined queries</h3><h4 id="product-backlog-and-feedback-queries">Product backlog and feedback queries</h4><p>Product owners can use the shared queries that are defined in the following table to plan and track user stories that compose the product backlog.</p><div class="responsiveTableWrapper"><table responsive="true"><thead><tr responsive="true"><th><p>Shared query</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td data-th="Shared query"><p>Product Backlog</p></td><td data-th="Description"><p>Provides a tree list of all user stories that are in a New, Active or Resolved state and sorts them by rank.</p></td></tr><tr><td data-th="Shared query"><p>Product Planning</p></td><td data-th="Description"><p>Provides a flat list of all user stories that are not in a Removed state, and have not been closed in the last 90 days.</p></td></tr><tr><td data-th="Shared query"><p>Feedback</p></td><td data-th="Description"><p>Lists all feedback responses that are in an Active state.</p></td></tr></tbody></table></div><h4 id="iteration-planning-queries">Iteration planning queries</h4><p>The following table describes the shared queries that are listed under the <strong>Current Iteration</strong> folder. These queries find work items that are assigned to a specified iteration. As you plan additional iterations, you can modify these queries to specify a different iteration and then save them to additional folders that you create, such as <strong>Iteration 2</strong> or <strong>Iteration 3</strong>.</p><p>The project administrator for each team project <a href="https://www.visualstudio.com/vi-vn/docs/work/customize/modify-areas-iterations">defines area and iteration paths</a> for that project so that the team can track progress by those designations.</p><div class="responsiveTableWrapper"><table responsive="true"><thead><tr responsive="true"><th><p>Shared query</p></th><th><p>Description</p></th></tr></thead><tbody><tr><td data-th="Shared query"><p>Active Bugs</p></td><td data-th="Description"><p>Lists all active bugs and sorts them by rank, priority, and severity.</p></td></tr><tr><td data-th="Shared query"><p>Active Tasks</p></td><td data-th="Description"><p>Lists all active tasks and sorts them by rank, priority, and severity.</p></td></tr><tr><td data-th="Shared query"><p>Bug Triage</p></td><td data-th="Description"><p>Lists all active bugs that are not assigned to a team member.</p><p>The <a href="https://msdn.microsoft.com/library/dd380707.aspx">Triage Workbook references</a> this query. </p></td></tr><tr><td data-th="Shared query"><p>Completed Tasks</p></td><td data-th="Description"><p>Lists all tasks that have been closed and sorts them by rank, priority, and severity.</p></td></tr><tr><td data-th="Shared query"><p>Iteration Backlog</p></td><td data-th="Description"><p>Lists all user stories and their linked tasks and sorts the stories by rank and priority.</p></td></tr><tr><td data-th="Shared query"><p>Open Issues</p></td><td data-th="Description"><p>Lists all issues under the specified iteration path that are not closed and any tasks that are linked to the issues and then sorts the issues by rank and priority.</p><p>The <a href="https://msdn.microsoft.com/library/dd380707.aspx">Issues Workbook</a> references this query. </p></td></tr><tr><td data-th="Shared query"><p>Open Test Cases</p></td><td data-th="Description"><p>Lists all test cases that are not closed and sorts them by priority.</p></td></tr><tr><td data-th="Shared query"><p>Open User Stories</p></td><td data-th="Description"><p>Lists all active user stories and sorts them by their stack rank.</p></td></tr><tr><td data-th="Shared query"><p>Resolved Bugs</p></td><td data-th="Description"><p>Lists all resolved bugs and sorts them by rank, priority, and severity.</p></td></tr><tr><td data-th="Shared query"><p>User Stories</p></td><td data-th="Description"><p>Lists all user stories that are not closed and sorts them by priority and then ID,</p></td></tr><tr><td data-th="Shared query"><p>User Stories without Test Cases</p></td><td data-th="Description"><p>Lists all user stories that do not have a link to a test case. Stories are sorted by ID.</p></td></tr></tbody></table></div><blockquote style="font-size: 13px"><b>Tip: </b>Queries listed under the Current Iteration folder do not automatically update when a new iteration becomes current. The current iteration is based on the dates that you <a href="https://www.visualstudio.com/vi-vn/docs/work/scrum/define-sprints">assign to your sprint schedules</a>. You must manually update the iteration path of each query to have it point to the iteration path that corresponds to the current iteration. Or, you can edit the shared query to <a href="https://www.visualstudio.com/vi-vn/docs/work/track/query-by-date-or-current-iteration">use the <strong>@CurrentIteration</strong> macro</a>. </blockquote><h4 id="find-tasks-with-summary-values">Find tasks with summary values</h4><p>The <strong>Work Items With Summary Values</strong> shared query, which is located in the <strong>Troubleshooting</strong> folder, lists all tasks that have child tasks and that contain non-zero values in the Remaining Work or Completed Work fields. This query is designed to find tasks that report work effort that is already accounted for in their child tasks. For the hours to be counted only once, summary tasks should not be assigned any hours. For more information, see <a href="https://msdn.microsoft.com/library/dd997572.aspx">Address inaccuracies published for summary values</a>.</p><h3 id="workbooks-tfs">Workbooks (TFS)</h3><p>You can use the following Excel workbooks to review open issues and to rank and assign untriaged work items. Each workbook references a shared query.  </p><ul><li>The <a href="https://msdn.microsoft.com/library/dd380707.aspx">Issues workbook</a> uses the Open Issues shared query.  </li><li>The <a href="https://msdn.microsoft.com/library/dd380707.aspx">Triage workbook</a> uses the Bug Triage shared query.</li></ul><blockquote style="font-size: 13px"><b>Feature availability: </b>Workbooks are only available when you connect to an on-premises TFS that's been configured with a SharePoint portal.<br></blockquote><p>Because these queries support workbooks, if you change these queries, it will affect those workbooks that use them.</p><h3 id="provide-feedback">Provide feedback</h3><p>Send suggestions on <strong><a href="https://visualstudio.uservoice.com/forums/330519-team-services">UserVoice</a></strong>, and follow us on <strong><a href="https://twitter.com/VSTeam">Twitter</a> @VSTeam</strong>.  </p><p>Or, tell us what you think with <strong>Send-a-Smile</strong> on the title bar ... <img src="./Agile process _ Team Services &amp; TFS_files/sendsmile1.png" alt="Send-a-Smile">. </p></div></div>
+        
+
+<input type="hidden" id="proxyUrl" value="https://apiexproxy.azurewebsites.net/svc">
+<input type="hidden" id="playgroundUrl" value="https://apisandbox.msdn.microsoft.com/">
+<input type="hidden" id="ajaxTimeout" value="10000">
+<input type="hidden" id="supportedLanguagesForPlayground" value="javascript;c#">
+<input type="hidden" id="authorizationHeader" value="Bearer {token:{resourceName}}">
+
+
+
+
+    </div>
+    <div id="rightColumn" class="right" ms.cmpgrp="right nav">
+            <div id="right-nav-wrapper">
+        <div id="right-nav-area" class="bs-sidebar affix-top">
+            <div id="navigationButtons">
+                <a id="isdSmile" title="Feedback" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#">
+                    <ins class="smile"></ins>
+                    Feedback
+                </a>
+
+
+                <a id="isdShare" title="Chia sẻ" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#">
+                    <ins class="share"></ins>
+                    Chia sẻ
+                </a>
+                <div id="socials" style="display: none">
+                    <a class="isdFacebook" title="Chia sẻ trên Facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process" data-sitename="Facebook">
+                        <ins class="facebook"></ins>
+                    </a>
+                    <a class="isdTwitter" title="Chia sẻ trên Twitter" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process&amp;text=Agile%20process%20%7C%20Team%20Services%20%26%20TFS&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process" data-sitename="Twitter">
+                        <ins class="twitter"></ins>
+                    </a>
+                    <a class="isdGooglePlus" title="Chia sẻ trên Google+" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.visualstudio.com%2Fvi-vn%2Fdocs%2Fwork%2Fguidance%2Fagile-process" data-sitename="Google+">
+                        <ins class="googlePlus"></ins>
+                    </a>
+                </div>
+
+            </div>
+        <ul id="task-nav-list" class="nav bs-sidenav" ms.cmpgrp="indoc toc"><li class="nav-header">TRONG BÀI VIẾT NÀY</li><li><a class="" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#plan-and-track-work">Plan and track work</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#list-work-items-using-queries">List work items using queries</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#quick-tips">Quick tips</a></li><li><a class="" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#monitor-progress">Monitor progress</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#create-light-weight-charts">Create light-weight charts</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#power-bi-reports-team-services">Power BI reports (Team Services)</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#sql-server-reports-tfs">SQL Server reports (TFS)</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#sharepoint-portal-dashboards-tfs">SharePoint portal dashboards (TFS)</a></li><li><a class="" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#related-notes">Related notes</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#agile-process-predefined-queries">Agile process predefined queries</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#workbooks-tfs">Workbooks (TFS)</a></li><li><a class="sub-task" href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#provide-feedback">Provide feedback</a></li></ul></div>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+        </div>
+
+                
+               <div id="openFeedbackContainer" style="z-index:220; position:relative;" ms.pgarea="body" ms.cmpgrp="feedbackform" class="ofb-container-var111"><div class="ofb-vote"><div class="ofb-close"></div><div class="ofb-content"><div data-ofbloctxt="vote_title">Trang này có hữu ích không</div><button class="ofb-yes" data-ofbloctxt="vote_yes">CÓ</button><button class="ofb-no" data-ofbloctxt="vote_no">KHÔNG</button></div><div class="ofb-mobcontent"><button class="ofb-feedback" data-ofbloctxt="vote_feedback">PHẢN HỒI</button></div></div></div>
+               
+
+        
+
+
+        
+    <div id="ux-footer" class="ltr">
+            
+                
+            <div id="footerSock" class="">
+                <div id="footerSockInner">
+
+
+                    <div class="footerSockCenter">
+                            <a name="feedback"></a>
+
+<div class="rating">
+    <div id="ratingSection1">
+        <div class="title">
+            Trang này có hữu ích không
+        </div>
+        <div class="description">
+            Phản hồi của bạn về nội dung này rất quan trọng.<br>Hãy cho chúng tôi biết suy nghĩ của bạn.
+        </div>
+        <div class="buttons">
+            <button class="button" id="ratingYes" aria-label="Có, trang này rất hữu ích">Có</button>
+            <button class="button" id="ratingNo" aria-label="Không, trang này không hữu ích">Không</button>
+        </div>
+        <input id="ratingValue" type="hidden" value="">
+    </div>
+    <div id="ratingSection2">
+        <div class="title left">
+            Phản hồi bổ sung?
+        </div>
+        <textarea id="ratingText" rows="6" cols="" maxlength="1500"></textarea>
+        <div class="right">
+            <div class="counter">
+                Còn <span id="feedbackTextCounter">1500</span> ký tự
+            </div>
+            <div class="buttons">
+                <button class="button" id="ratingSubmit" aria-label="Gửi phản hồi bổ sung của tôi">Gửi</button>
+                <button class="button" id="ratingSkipThis" aria-label="Bỏ qua phản hồi bổ sung">Bỏ qua bước này</button>
+            </div>
+        </div>
+    </div>
+    <div id="ratingSection3">
+        <div class="title">
+            Cảm ơn bạn!
+        </div>
+        <div class="description">
+            Chúng tôi đánh giá cao phản hồi của bạn.
+        </div>
+    </div>
+    
+    
+    <div id="contentFeedbackQAContainer" style="display: none;"></div>
+</div>
+    
+                                            </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        <div class="footerContainer">
+            <div class="fourColumnFooter">
+                <div class="fourColumnRow">
+                    <div data-fragmentname="Column1" id="Fragment_Column1" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="ListOfLinkLists">
+    <div class="listTitle">Visual Studio</div>
+    <div class="listItems">
+      
+      <div class="linkList">
+        <ul class="links">
+          <li>
+            <a href="https://my.visualstudio.com/" id="Column1_1063_165" xmlns="http://www.w3.org/1999/xhtml">My Visual Studio</a>
+          </li>
+          <li>
+            <a href="https://go.microsoft.com/fwlink/?LinkID=703828" id="Column1_1063_166" xmlns="http://www.w3.org/1999/xhtml">Manage Visual Studio</a>
+          </li>
+          <li>
+            <a href="https://marketplace.visualstudio.com/" id="Column1_1063_167" xmlns="http://www.w3.org/1999/xhtml">Marketplace</a>
+          </li>
+          <li>
+            <a href="https://www.visualstudio.com/integrate" id="Column1_1063_168" xmlns="http://www.w3.org/1999/xhtml">Integrate<span class="Apple-tab-span" style="white-space:pre;" xmlns=""></span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+                    <div data-fragmentname="Column2" id="Fragment_Column2" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="ListOfLinkLists">
+    <div class="listTitle">Related Sites</div>
+    <div class="listItems">
+      
+      <div class="linkList">
+        <ul class="links">
+          <li>
+            <a href="https://msdn.microsoft.com/library/vstudio" id="Column2_1063_180" xmlns="http://www.w3.org/1999/xhtml">Visual Studio documentation</a>
+          </li>
+          <li>
+            <a href="https://msdn.microsoft.com/" id="Column2_1063_181" xmlns="http://www.w3.org/1999/xhtml">MSDN Home</a>
+          </li>
+          <li>
+            <a href="https://channel9.msdn.com/" id="Column2_1063_182" xmlns="http://www.w3.org/1999/xhtml">Channel 9</a>
+          </li>
+          <li>
+            <a href="https://azure.microsoft.com/" id="Column2_1063_250" xmlns="http://www.w3.org/1999/xhtml">Azure</a>
+          </li>
+          <li>
+            <a href="https://blogs.msdn.com/b/visualstudio/" id="Column2_1063_251" xmlns="http://www.w3.org/1999/xhtml">Visual Studio Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+                </div>
+                <div class="fourColumnRow">
+                    <div data-fragmentname="Column3" id="Fragment_Column3" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="ListOfLinkLists">
+    <div class="listTitle">Products</div>
+    <div class="listItems">
+      
+      <div class="linkList">
+        <ul class="links">
+          <li>
+            <a href="https://www.visualstudio.com/products/vs-2015-product-editions" target="_blank" id="Column3_1063_211" xmlns="http://www.w3.org/1999/xhtml">Visual Studio</a>
+          </li>
+          <li>
+            <a href="https://www.visualstudio.com/products/visual-studio-team-services-vs" target="_blank" id="Column3_1063_212" xmlns="http://www.w3.org/1999/xhtml">Visual Studio Team Services</a>
+          </li>
+          <li>
+            <a href="https://code.visualstudio.com/" target="_blank" id="Column3_1063_213" xmlns="http://www.w3.org/1999/xhtml">Visual Studio Code</a>
+          </li>
+          <li>
+            <a href="https://www.visualstudio.com/downloads/download-visual-studio-vs" target="_blank" id="Column3_1063_218" xmlns="http://www.w3.org/1999/xhtml">Download</a>
+          </li>
+          <li>
+            <a href="https://www.visualstudio.com/products/compare-visual-studio-2015-products-vs" id="Column3_1063_219" xmlns="http://www.w3.org/1999/xhtml">Compare</a>
+          </li>
+          <li>
+            <a href="https://www.visualstudio.com/products/how-to-buy-vs" id="Column3_1063_252" xmlns="http://www.w3.org/1999/xhtml">How to Buy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+                    <div data-fragmentname="Column4" id="Fragment_Column4" xmlns="http://www.w3.org/1999/xhtml">
+  <div class="ListOfLinkLists">
+    <div class="listTitle">Support</div>
+    <div class="listItems">
+      
+      <div class="linkList">
+        <ul class="links">
+          <li>
+            <a href="https://www.visualstudio.com/support/support-overview-vs" target="_blank" id="Column4_1063_194" xmlns="http://www.w3.org/1999/xhtml">Get Support</a>
+          </li>
+          <li>
+            <a href="https://connect.microsoft.com/visualstudio" target="_blank" id="Column4_1063_195" xmlns="http://www.w3.org/1999/xhtml">Submit a Bug</a>
+          </li>
+          <li>
+            <a href="https://visualstudio.uservoice.com/forums/121579-visual-studio" target="_blank" id="Column4_1063_197" xmlns="http://www.w3.org/1999/xhtml">Submit an Idea</a>
+          </li>
+          <li>
+            <a href="https://social.msdn.microsoft.com/forums/vstudio/en-us/home?category=visualstudio%2cvslanguages%2cvstfs%2cnetdevelopment%2cvsarch" target="_blank" id="Column4_1063_196" xmlns="http://www.w3.org/1999/xhtml">Forums</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+                </div>
+            </div>
+            <div id="baseFooter">
+                    <div id="leftBaseFooter">
+                        
+    <form class="selectLocale" id="selectLocaleForm" action="https://www.visualstudio.com/vi-vn/selectlocale-vs">
+        <input type="hidden" name="fromPage" value="https%3a%2f%2fwww.visualstudio.com%2fvi-vn%2fdocs%2fwork%2fguidance%2fagile-process">
+        <a href="https://www.visualstudio.com/vi-vn/docs/work/guidance/agile-process#" onclick="$(&#39;#selectLocaleForm&#39;).submit();return false;" title="Change your language">Tiếng Việt</a>
+    </form>
+
+
+                    </div>
+                <div data-fragmentname="BaseFooterLinks" id="Fragment_BaseFooterLinks" xmlns="http://www.w3.org/1999/xhtml">
+  
+  <div class="linkList">
+    <ul class="links horizontal">
+      <li>
+        <a href="https://www.visualstudio.com/support/support-overview-vs" id="BaseFooterLinks_1063_144" xmlns="http://www.w3.org/1999/xhtml">Contact us</a>
+      </li>
+      <li>
+        <a href="https://visualstudio.com/news/visual-studio-hiring-overview-vs" id="BaseFooterLinks_1063_253" xmlns="http://www.w3.org/1999/xhtml">Jobs</a>
+      </li>
+      <li>
+        <a href="https://go.microsoft.com/fwlink/?LinkID=264782&amp;clcid=0x409" id="BaseFooterLinks_1063_145" xmlns="http://www.w3.org/1999/xhtml">Privacy</a>
+      </li>
+      <li>
+        <a href="https://go.microsoft.com/fwlink/?LinkID=266231&amp;clcid=0x409" id="BaseFooterLinks_1063_146" xmlns="http://www.w3.org/1999/xhtml">Terms of use</a>
+      </li>
+      <li>
+        <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" id="BaseFooterLinks_1063_147" xmlns="http://www.w3.org/1999/xhtml">Trademarks</a>
+      </li>
+    </ul>
+  </div>
+</div>
+                <div class="clear"></div>
+                <div id="rightBaseFooter">
+                    <span class="microsoftLogoNew" title="Microsoft"></span>
+                    <span class="microsoftCopyright">© 2016 Microsoft</span>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="footerPrintView">
+            <div class="footerCopyrightPrintView">© 2016 Microsoft</div>
+        </div>
+
+        
+    
+
+
+<!--[CDATA[ WebTrends view model not available or IncludeLegacyWebTrendsScriptInGlobal feature flag is off]]-->
+
+
+    </div>
+
+    
+    
+
+    
+    
+
+<!--[CDATA[ Third party scripts and code linked to or referenced from this website are licensed to you by the parties that own such code, not by Microsoft.  See ASP.NET Ajax CDN Terms of Use – http://www.asp.net/ajaxlibrary/CDN.ashx. ]]-->
+    
+<script type="text/javascript" class="mtps-injected">
+/*<![CDATA[*/
+(function(window,document){"use strict";function preload(scripts){for(var result=[],script,e,i=0;i<scripts.length;i++)script=scripts[i],script.hasOwnProperty("url")&&(e=document.createElement("script"),e.src=script.url,script.throwaway=e),result.push(script);return result}function inject(scripts,index){var script,elem;if(index>=scripts.length){delete mtps.injectScripts;return}script=scripts[index];elem=document.createElement("script");elem.className="mtps-injected";elem.async=!1;var isLoaded=!1,timeoutId=0,injectNextFnName="",injectNext=elem.onerror=function(){isLoaded||(isLoaded=!0,inject(scripts,index+1),window.clearTimeout(timeoutId),elem.onload=elem.onerror=elem.onreadystatechange=null,injectNextFnName&&delete mtps[injectNextFnName],elem.removeEventListener&&elem.removeEventListener("load",injectNext,!1))};elem.addEventListener?elem.addEventListener("load",injectNext,!1):elem.readyState==="uninitialized"?elem.onreadystatechange=function(){(this.readyState==="loaded"||this.readyState==="complete")&&injectNext()}:elem.onload=injectNext;script.hasOwnProperty("url")?(timeoutId=window.setTimeout(injectNext,12e4),elem.src=script.url):(injectNextFnName="_injectNextScript_"+index,mtps[injectNextFnName]=injectNext,timeoutId=window.setTimeout(injectNext,2e3),elem.text="try {\n"+script.txt+"\n} finally { MTPS."+injectNextFnName+" && MTPS."+injectNextFnName+"(); }");parent.appendChild(elem)}var mtps=window.MTPS||(window.MTPS={}),parent=document.getElementsByTagName("head")[0];mtps.injectScripts=function(scripts){inject(preload(scripts),0)}})(window,document);
+MTPS.injectScripts([
+	{ txt: "/**/\r\n(window.MTPS || (window.MTPS = {})).cdnDomains || (window.MTPS.cdnDomains = { \r\n\t\"image\": \"https://i3-vso.sec.s-msft.com\", \r\n\t\"js\": \"https://i2-vso.sec.s-msft.com\", \r\n\t\"css\": \"https://i-vso.sec.s-msft.com\", \r\n\t\"xap\": \"https://i-vso.sec.s-msft.com\", \r\n\t\"ttf\": \"https://i-vso.sec.s-msft.com\"\r\n});\r\n/**/" },
+	{ url: "https://open-rating.azureedge.net/open-rating.entry.min.js" },
+	{ txt: "//\n\n        window.appInsightsId = \u0027\u0027;\n        //" },
+	{ url: "https://i2-vso.sec.s-msft.com/Combined.js?resources=0:OpenPublishingResponsiveTable,0:OpenPublishingResponsiveVideo,1:Breadcrumbs,0:AppInsightsPerf,0:Telemetry,0:InteractionTracker,0:ABTestControl,2:WEDCS;/Areas/Epx/Content/Scripts:0,/Areas/Library/Content:1,/Areas/Library/Themes/Base/Content:2\u0026amp;hashKey=0BE4772CFD73ED8E511D033A4CBACFAF\u0026amp;v=52E136906CCD3B4265EF343C2E42D7E6" },
+	{ url: "https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js" },
+	{ url: "https://i2-vso.sec.s-msft.com/Combined.js?resources=0:Utilities,0:highlight.min,0:OACodeSnippet,1:SearchBox;/Areas/Epx/Content/Scripts:0,/Areas/VisualStudio/Themes/VStudio/Content:1\u0026amp;hashKey=BDC4DBA1CFCBA4F7D9FF14CFE7555A83\u0026amp;v=52E136906CCD3B4265EF343C2E42D7E6" },
+	{ url: "https://i1.services.social.microsoft.com/search/Widgets/SearchBox.jss?boxid=HeaderSearchTextBox\u0026btnid=HeaderSearchButton\u0026minimumTermLength=2\u0026pgArea=header\u0026brand=Msdn\u0026loc=vi-vn\u0026Refinement=198\u0026focusOnInit=false\u0026iroot=vscom\u0026emptyWatermark=true\u0026searchButtonTooltip=Search here" },
+	{ url: "https://i2-vso.sec.s-msft.com/Combined.js?resources=0:Header2,1:OpenPublishingMobileMenu,1:apiRunner,1:OpenPublishingTopic,2:API.1;/Areas/VisualStudio/Themes/VStudio/Content:0,/Areas/Epx/Content/Scripts:1,/Areas/Epx/Themes/Base/Content:2\u0026amp;hashKey=53DC727371646B10D406C92D0FD58204\u0026amp;v=52E136906CCD3B4265EF343C2E42D7E6" },
+	{ txt: "//\n                    // Load metadata into map to speed up reading later.\n                    var metadataMap = {};\n                    var metadataElements = document.getElementsByTagName(\"meta\");\n                    for (var i = 0; i \u003c metadataElements.length; ++i)\n                    {\n                        var meta = metadataElements[i];\n                        var name = meta.getAttribute(\"name\");\n                        if (name)\n                        {\n                            metadataMap[name.toLowerCase()] = meta.getAttribute(\"content\");\n                        }\n                    }\n\n                    window.openFeedbackOptions =\n                    {\n                        environment: \"prod\",\n                        anonUserCookieName:\"A\",\n                        documentMetaName: \"ms.documentid\",\n                        documentSnapIdMetaName: \"ms.gitcommit\",\n                        localeMetaName: \"ms.locale\",\n                        propertyBag:\n                        {\n                            \"ms.depotname\": metadataMap[\"ms.depotname\"],\n                            \"ms.contentsource\": metadataMap[\"ms.contentsource\"]\n                        }\n                    };\n                //" },
+	{ url: "https://i2-vso.sec.s-msft.com/Combined.js?resources=0:Rating,1:ResponsiveSupport;/Areas/Epx/Themes/Base/Content:0,/Areas/Library/Content:1\u0026amp;hashKey=94138FA1A48A5AAE06AED3C62D6EC2AC\u0026amp;v=52E136906CCD3B4265EF343C2E42D7E6" }
+]);
+
+/*]]>*/
+</script>
+
+<div id="overlayMask"></div><script aria-hidden="true" type="application/x-lastpass" id="hiddenlpsubmitdiv" style="display: none;"></script><script>try{(function() { for(var lastpass_iter=0; lastpass_iter < document.forms.length; lastpass_iter++){ var lastpass_f = document.forms[lastpass_iter]; if(typeof(lastpass_f.lpsubmitorig2)=="undefined"){ lastpass_f.lpsubmitorig2 = lastpass_f.submit; if (typeof(lastpass_f.lpsubmitorig2)=='object'){ continue;}lastpass_f.submit = function(){ var form=this; var customEvent = document.createEvent("Event"); customEvent.initEvent("lpCustomEvent", true, true); var d = document.getElementById("hiddenlpsubmitdiv"); if (d) {for(var i = 0; i < document.forms.length; i++){ if(document.forms[i]==form){ if (typeof(d.innerText) != 'undefined') { d.innerText=i.toString(); } else { d.textContent=i.toString(); } } } d.dispatchEvent(customEvent); }form.lpsubmitorig2(); } } }})()}catch(e){}</script><script type="text/javascript" src="./Agile process _ Team Services &amp; TFS_files/open-rating.ui-v0.6.1-46-g01ff629.master.min.js"></script></body></html>
