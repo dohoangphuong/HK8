@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="838fe52d4dd2417e8808badf9e817c76" Name="Diagram1">
+        <EntityTypeShape EntityType="CERTIFICATE_MANAGEMENTModel.ACCOUNT" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERTIFICATE_MANAGEMENTModel.CERTIFICATE" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERTIFICATE_MANAGEMENTModel.CLASS" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERTIFICATE_MANAGEMENTModel.SCOREBOARD" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CERTIFICATE_MANAGEMENTModel.TEMPLATE" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="CERTIFICATE_MANAGEMENTModel.fk_CERTIFICATE_ACCOUNT_Email" ManuallyRouted="false" />
+        <AssociationConnector Association="CERTIFICATE_MANAGEMENTModel.fk_CERTIFICATE_CLASS_ClassNo" ManuallyRouted="false" />
+        <AssociationConnector Association="CERTIFICATE_MANAGEMENTModel.fk_SCOREBOARD_CERTIFICATE_CertNo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

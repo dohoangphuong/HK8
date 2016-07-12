@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CertMService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CertMService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfCERTIFICATE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CERTIFICATE" nillable="true" type="tns:CERTIFICATE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCERTIFICATE" nillable="true" type="tns:ArrayOfCERTIFICATE" />
+  <xs:complexType name="CERTIFICATE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACCOUNT" nillable="true" type="tns:ACCOUNT" />
+      <xs:element minOccurs="0" name="CLASS" nillable="true" type="tns:CLASS" />
+      <xs:element minOccurs="0" name="CertNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClassNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Major" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Place" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rank" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SCOREBOARD" nillable="true" type="tns:ArrayOfSCOREBOARD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CERTIFICATE" nillable="true" type="tns:CERTIFICATE" />
+  <xs:complexType name="ACCOUNT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CERTIFICATE" nillable="true" type="tns:ArrayOfCERTIFICATE" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ACCOUNT" nillable="true" type="tns:ACCOUNT" />
+  <xs:complexType name="CLASS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CERTIFICATE" nillable="true" type="tns:ArrayOfCERTIFICATE" />
+      <xs:element minOccurs="0" name="ClassNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CLASS" nillable="true" type="tns:CLASS" />
+  <xs:complexType name="ArrayOfSCOREBOARD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SCOREBOARD" nillable="true" type="tns:SCOREBOARD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSCOREBOARD" nillable="true" type="tns:ArrayOfSCOREBOARD" />
+  <xs:complexType name="SCOREBOARD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CERTIFICATE" nillable="true" type="tns:CERTIFICATE" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CertNo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Mark" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SCOREBOARD" nillable="true" type="tns:SCOREBOARD" />
+  <xs:complexType name="ArrayOfTEMPLATE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TEMPLATE" nillable="true" type="tns:TEMPLATE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTEMPLATE" nillable="true" type="tns:ArrayOfTEMPLATE" />
+  <xs:complexType name="TEMPLATE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FrontLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TEMPLATE" nillable="true" type="tns:TEMPLATE" />
+  <xs:complexType name="ArrayOfACCOUNT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ACCOUNT" nillable="true" type="tns:ACCOUNT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfACCOUNT" nillable="true" type="tns:ArrayOfACCOUNT" />
+</xs:schema>

@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "UploadTemplate";
+}
+
+<style>
+    .upload {
+        margin: 0% 0% 0% 30%;
+    }
+</style>
+<div class="upload" id="result">
+    <h2>UploadTemplate</h2>
+
+    <form name="frmMain" id="submitTemplate" method="post" enctype="multipart/form-data">
+
+        Tên template: <input type="text" name="name" required /><br /><br />
+
+        File mặt trước: <input type="file" name="file1" accept=".doc,.docx" required /><br />
+
+        File mặt sau: <input type="file" name="file2" accept=".xlsx,.xls" required /><br />
+
+        <input type="submit" value="Upload Template" />
+    </form>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $("form#submitTemplate").submit(function () {
+
+        var formData = new FormData($(this)[0]);
+
+        $.ajax({
+            url: '@Url.Action("Upload","Template")',
+            type: 'POST',
+            data: formData,
+            async: false,
+            datatype:'html',
+            success: function (data) {
+                alert(data);
+            },
+            cache: false,
+            contentType: false,
+            processData: false,
+            error: function(){
+                alert("Gặp lỗi trong quá trình gửi !");
+            }
+        });
+    });
+</script>

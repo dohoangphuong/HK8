@@ -1,0 +1,114 @@
+thg 3 22, 2016 9:35:24 SA org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+thg 3 22, 2016 9:35:32 SA org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cas'
+thg 3 22, 2016 9:35:34 SA org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+thg 3 22, 2016 9:35:34 SA org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+thg 3 22, 2016 9:44:17 SA org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+thg 3 22, 2016 9:44:18 SA org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+thg 3 22, 2016 9:44:18 SA org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+thg 3 22, 2016 11:24:08 SA org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+thg 3 22, 2016 11:24:11 SA org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cas'
+thg 3 22, 2016 11:24:12 SA org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+thg 3 22, 2016 11:24:12 SA org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+thg 3 22, 2016 11:25:01 SA org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+thg 3 22, 2016 11:25:04 SA org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cas'
+thg 3 22, 2016 11:25:05 SA org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+thg 3 22, 2016 11:25:05 SA org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+thg 3 22, 2016 12:14:10 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+thg 3 22, 2016 12:14:14 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cas'
+thg 3 22, 2016 12:14:15 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+thg 3 22, 2016 12:14:15 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+thg 3 22, 2016 12:30:26 CH org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+thg 3 22, 2016 12:30:26 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+thg 3 22, 2016 12:30:26 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+thg 3 22, 2016 1:47:37 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+thg 3 22, 2016 1:47:48 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cas'
+thg 3 22, 2016 1:47:50 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+thg 3 22, 2016 1:47:50 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+thg 3 22, 2016 1:49:07 CH org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+thg 3 22, 2016 1:49:07 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+thg 3 22, 2016 1:49:07 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+thg 3 22, 2016 1:54:10 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+thg 3 22, 2016 1:54:14 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cas'
+thg 3 22, 2016 1:54:14 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+thg 3 22, 2016 1:54:14 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+thg 3 22, 2016 1:54:53 CH org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+thg 3 22, 2016 1:54:53 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+thg 3 22, 2016 1:54:53 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+thg 3 22, 2016 2:39:54 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+thg 3 22, 2016 2:39:57 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cas'
+thg 3 22, 2016 2:39:58 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+thg 3 22, 2016 2:39:58 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+thg 3 22, 2016 2:54:17 CH org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+thg 3 22, 2016 2:54:17 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+thg 3 22, 2016 2:54:17 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+thg 3 22, 2016 2:59:19 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+thg 3 22, 2016 2:59:22 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cas'
+thg 3 22, 2016 2:59:23 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+thg 3 22, 2016 2:59:23 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+thg 3 22, 2016 4:05:59 CH org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+thg 3 22, 2016 4:06:00 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+thg 3 22, 2016 4:06:00 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()
+thg 3 22, 2016 4:26:14 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+thg 3 22, 2016 4:26:17 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cas'
+thg 3 22, 2016 4:26:18 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+thg 3 22, 2016 4:26:18 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()
+thg 3 22, 2016 4:48:42 CH org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+thg 3 22, 2016 4:48:42 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextDestroyed()
+thg 3 22, 2016 4:48:42 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextDestroyed()

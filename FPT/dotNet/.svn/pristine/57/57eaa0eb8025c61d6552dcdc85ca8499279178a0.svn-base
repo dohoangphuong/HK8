@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+  C39 FULL TIME .NET
+  HP
+  -->
+<configuration>
+  <configSections>
+    <section name="entityFramework" type="System.Data.Entity.Internal.ConfigFile.EntityFrameworkSection, EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+    <section name="casClientConfig" type="DotNetCasClient.Configuration.CasClientConfiguration, DotNetCasClient" />
+  </configSections>
+  <connectionStrings>
+    <add name="DefaultConnection" connectionString="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-CertMClient-20160321042505.mdf;Initial Catalog=aspnet-CertMClient-20160321042505;Integrated Security=True" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <appSettings>
+    <add key="webpages:Version" value="3.0.0.0" />
+    <add key="webpages:Enabled" value="false" />
+    <add key="ClientValidationEnabled" value="true" />
+    <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+  </appSettings>
+  <system.web>
+    <compilation debug="true" targetFramework="4.5" />
+    <httpRuntime targetFramework="4.5" />
+    <authentication mode="Forms">
+      <forms loginUrl="http://localhost:8080/cas/login" cookieless="UseCookies" />
+    </authentication>
+    <httpModules>
+            <add name="DotNetCasClient" type="DotNetCasClient.CasAuthenticationModule,DotNetCasClient" />
+    </httpModules>
+  </system.web>
+  <system.webServer>
+    <modules>
+      <remove name="FormsAuthenticationModule" />
+      <remove name="DotNetCasClient" /><add name="DotNetCasClient" type="DotNetCasClient.CasAuthenticationModule,DotNetCasClient" />
+    </modules>
+  <validation validateIntegratedModeConfiguration="false" /></system.webServer>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Helpers" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-5.0.0.0" newVersion="5.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Web.WebPages" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="1.0.0.0-3.0.0.0" newVersion="3.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="WebGrease" publicKeyToken="31bf3856ad364e35" />
+        <bindingRedirect oldVersion="0.0.0.0-1.5.2.14234" newVersion="1.5.2.14234" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+  <entityFramework>
+    <defaultConnectionFactory type="System.Data.Entity.Infrastructure.LocalDbConnectionFactory, EntityFramework">
+      <parameters>
+        <parameter value="v11.0" />
+      </parameters>
+    </defaultConnectionFactory>
+    <providers>
+      <provider invariantName="System.Data.SqlClient" type="System.Data.Entity.SqlServer.SqlProviderServices, EntityFramework.SqlServer" />
+    </providers>
+  </entityFramework>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBinding_ICertMService" maxReceivedMessageSize="2147483647" maxBufferSize="2147483647" maxBufferPoolSize="2147483647" transferMode="Streamed">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647" maxArrayLength="2147483647" maxBytesPerRead="2147483647" maxNameTableCharCount="2147483647"/>
+          <security mode="None"/>
+        </binding>
+      </basicHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://localhost:59832/CertMService.svc" binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ICertMService" contract="CertMServiceData.ICertMService" name="BasicHttpBinding_ICertMService" />
+    </client>
+  </system.serviceModel>
+  <casClientConfig casServerLoginUrl="http://localhost:8080/cas/login"
+                   casServerUrlPrefix="http://localhost:8080/cas/"
+                   serverName="http://localhost:59309/"
+                   notAuthorizedUrl="~/NotAuthorized.aspx"
+                   cookiesRequiredUrl="~/CookiesRequired.aspx"
+                   redirectAfterValidation="true"
+                   gateway="false" renew="false" singleSignOut="true" ticketTimeTolerance="5000"
+                   ticketValidatorName="Cas20"
+                   proxyTicketManager="CacheProxyTicketManager"
+                   serviceTicketManager="CacheServiceTicketManager"
+                   gatewayStatusCookieName="CasGatewayStatus" />
+</configuration>

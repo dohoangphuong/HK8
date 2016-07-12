@@ -1,0 +1,33 @@
+﻿@model IEnumerable<CertMClient.CertMServiceData.ACCOUNT>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+
+                @Html.ActionLink("Edit", "Edit", new { id = item.Email }, new { @href = "http://localhost:59309/Authorization/Edit/" + item.Email + "/" })
+            </td>
+        </tr>
+    }
+
+</table>

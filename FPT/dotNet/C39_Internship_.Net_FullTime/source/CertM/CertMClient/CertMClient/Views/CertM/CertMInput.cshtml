@@ -1,0 +1,258 @@
+﻿@{
+    Layout = null;
+}
+@model CertMClient.Models.CertificateModel
+@{var abc = new CertMClient.Models.CertificateModel();}
+<title>CERTIFICATE INPUT</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<link rel="stylesheet" type="text/css" href="/Content/kendo/kendo.common-material.min.css">
+<link rel="stylesheet" type="text/css" href="/Content/kendo/kendo.material.min.css">
+<link rel="stylesheet" type="text/css" href="/Content/CertMInput.css">
+
+<script src="/Scripts/kendo/jquery.min.js"></script>
+<script src="/Scripts/kendo/jszip.min.js"></script>
+<script src="/Scripts/kendo/kendo.all.min.js"></script>
+@Scripts.Render("~/bundles/bootstrap")
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@*Đỗ Hoàng Phương*@
+
+@* ---------------------------------head---------------------------------------- *@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container"> @*Cách vào*@
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Certificate Management", "Index", "Home", null, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Manager", "CertMInput", "CertM")</li>
+                <li>@Html.ActionLink("Delete Class", "viewDeleteClass", "Search")</li>
+                <li>@Html.ActionLink("Search Manager", "viewSearch", "Search")</li>
+                <li>@Html.ActionLink("Search Teacher", "viewSearchTeacher", "Search")</li>
+                <li>@Html.ActionLink("Upload Template", "UploadTemplate", "Template")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+            @Html.Partial("_LoginPartial") @*Login and Register*@
+        </div>
+    </div>
+</div>
+
+@* ---------------------------------Body---------------------------------------- *@
+<div id="body" class="container body-content">
+    <div class="container-fluid">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <h5>CERTIFICATE INPUT</h5>
+                <ul class="nav nav-pills nav-stacked" style="visibility: visible;">
+                    @*<li class="TextCenter" id="Upload"><a href="~/Template/UploadTemplate">Upload</a></li>*@
+                    <li class="TextCenter" id="Template"><a href="Template" data-toggle="tab" aria-expanded="true">Template</a></li>
+                    <li class="TextCenter" id="Submit"><a href="Submit" data-toggle="tab" aria-expanded="true">Submit</a></li>
+                    <li class="TextCenter" id="Download"><a href='@Url.Action("DownloadAfterInput","CertM")'>Dowload</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-10">
+                <div id="spreadsheet" style="width:100%; height: 500px"></div>
+                @*<pre id="result"></pre>*@  @*Có thể bỏ qua*@
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Template</h4>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <select id="slTemplate" hidden="hidden" style=" width:400px"></select>
+                        <input id="Btn_getTemplate" class="btn btn-success" type="button" hidden="hidden" value="OK" style="width: 200px" />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Fsoft - Certificate Management</p>
+        </footer>
+    </div>
+
+
+@*---------------------------Nhập thông tin---------------------------------------*@
+<script type="text/javascript" charset="utf-8">
+
+    $("#spreadsheet").kendoSpreadsheet();
+
+    var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+
+    var sheet = spreadsheet.activeSheet();
+    var NameInformation = @Html.Raw(Json.Encode(Model.NameInformation));
+    var NameScore = @Html.Raw(Json.Encode(Model.NameScore));
+
+    var NameInformationLenght='@Model.NameInformation.Count';
+    var Lenght='@Model.Lenght';
+    var i;
+
+    //cứng
+    for(i = 0; i < NameInformationLenght; i++) {
+        var A = String.fromCharCode(i + 65);
+        sheet.range(A + "1").values([[NameInformation[i]]]);                   //gán dữ liệu
+        sheet.range(A + "1").fontSize(14);                              //gán kích thước
+        sheet.columnWidth(i, 110);
+        sheet.range(A + "1").textAlign("center");
+     //   sheet.range(A + "1").enable(false);                             //gán ô đó không cho phép sửa
+    }
+
+    for(i; i < Lenght; i++) {
+        var A = String.fromCharCode(i + 65);
+        sheet.range(A + "1").values([[NameScore[i - NameInformationLenght]]]);                   //gán dữ liệu
+        sheet.range(A + "1").fontSize(14);                              //gán kích thước
+        sheet.columnWidth(i, 110);
+        sheet.range(A + "1").textAlign("center");
+      //  sheet.range(A + "1").enable(false);                             //gán ô đó không cho phép sửa
+    }
+    i--;
+    sheet.range("A1:"+String.fromCharCode(i + 65) +"1").color("green"); //gán màu sắc
+</script>
+
+@*//-------------------------Submit thông tin---------------------------------------*@
+<script>
+    var ValueModel;
+    var ValueTemplate;
+    function getdataJson(json){
+        var obj = jQuery.parseJSON(json);
+        var lenght='@Model.Lenght';
+        var NameInformationLenght='@Model.NameInformation.Count';
+        ValueModel = new Array();
+
+        for(var i = 0; i < obj.sheets[0].rows.length; i++)    ///chú ý gán i=0 lại
+        {
+            var ValueView = new Array();
+            for(var j=0; j < obj.sheets[0].rows[i].cells.length; j++)
+            {
+                if( obj.sheets[0].rows[i].cells.length != lenght)//có thể nhập không đủ số cột
+                {
+                    var column = i+1;
+                    alert("Error: Vui lòng nhập thông tin đủ " +  lenght + " cột ở hàng " + column + ". Hiện tại bạn đã nhập " + obj.sheets[0].rows[i].cells.length + " cột.");
+                    return false;
+                }
+                if(obj.sheets[0].rows[i].cells[j].index!=j)
+                {
+                    var A = String.fromCharCode(i + 65);
+                    var Column = j + 1;
+                    alert("Error: Vui lòng nhập thông tin đầy đủ vào ô [" + A + ":" + Column + "]");
+                    return false;
+                }
+
+                ValueView.push(obj.sheets[0].rows[i].cells[j].value);
+            }
+            Array.prototype.push.apply(ValueModel, ValueView);
+        }
+        return true;
+    };
+
+    $("#Submit").click(function (e) {
+        var spreadsheet = $("#spreadsheet").data("kendoSpreadsheet");
+        var data = spreadsheet.toJSON();
+        json = JSON.stringify(data, null, 2);
+        var a =false;
+        var a = getdataJson(json);
+
+        //---------------------
+        if(a==true)
+        {
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: '@Url.Action("Submit","CertM")',
+                data: JSON.stringify(ValueModel),
+                dataType: "json",
+                success: function (data) {
+                    alert(data);
+                    //$("#result").text(data.result);
+                },
+                error: function (data) {
+                    //  alert("readyState: " + xhr.readyState + "\nstatus: " + xhr.status);
+                    alert(data);
+                }
+            });
+        }
+    });
+
+</script>
+
+@*//-------------------------Choose Teaplate---------------------------------------*@
+<script>
+    $("#Template").click(function (e) {
+        //if ($('#result').children().length > 0) {
+        //    if (confirm("Bạn muốn rời khỏi trang này?"))
+        //        getTemplate();
+        //}
+        //else
+            getTemplate();
+
+    });
+    function getTemplate() {
+        $.ajax({
+            type: "GET",
+            contentType: "application/json",
+            url: '@Url.Action("GetTemplate","CertM")',
+            dataType: 'json',
+            success: function (data) {
+                $('#slTemplate').empty();
+                $.each(data, function (index, element) {
+                    $('#slTemplate').append($("<option></option>").attr("value", element.Name).text(element.Name));
+                });
+                //$('#result').html("");
+                $('#slTemplate').show();
+                $('#Btn_getTemplate').show();
+            },
+            error: function (data) {
+                alert("Error: File template bị lỗi");
+            }
+        });
+    }
+    $('#Btn_getTemplate').click(function () {
+        $("#myModal").modal('hide');
+        var name = $('#slTemplate').val();
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: '@Url.Action("Template","CertM")',
+            data: JSON.stringify(name),
+            dataType: 'html',
+            success: function (data) {
+                $('#body').html(data);
+                alert("Sussces: Template");
+            },
+            error: function (data) {
+                alert("Error: File template bị lỗi");
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $("#Template").click(function () {
+            $("#myModal").modal();
+        });
+    });
+</script>

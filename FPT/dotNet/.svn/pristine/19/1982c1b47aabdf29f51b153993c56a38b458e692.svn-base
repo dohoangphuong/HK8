@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CertMService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:59832/CertMService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:59832/CertMService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:59832/CertMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/CertMService" />
+      <xsd:import schemaLocation="http://localhost:59832/CertMService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:59832/CertMService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/CertMServiceLib.Generator" />
+      <xsd:import schemaLocation="http://localhost:59832/CertMService.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/CertMServiceLib" />
+      <xsd:import schemaLocation="http://localhost:59832/CertMService.svc?xsd=xsd6" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICertMService_SizePageSearch_InputMessage">
+    <wsdl:part name="parameters" element="tns:SizePageSearch" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_SizePageSearch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SizePageSearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_SearchCert_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCert" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_SearchCert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetScoreBoard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetScoreBoard" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetScoreBoard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetScoreBoardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_DeleteClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClass" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_DeleteClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_AddCertificate_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCertificate" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_AddCertificate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCertificateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_ReadExcel_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadExcel" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_ReadExcel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetListTemplateName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListTemplateName" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetListTemplateName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListTemplateNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_createCertificateFromJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:createCertificateFromJson" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_createCertificateFromJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createCertificateFromJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_DownLoadFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownLoadFile" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_DownLoadFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownLoadFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetWorkingState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkingState" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetWorkingState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkingStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_Close_InputMessage">
+    <wsdl:part name="parameters" element="tns:Close" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_Close_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_AddAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccount" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_AddAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_CheckAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAccount" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_CheckAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetTypeAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeAccount" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetTypeAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_AddAccountStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccountStudent" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_AddAccountStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAccountStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_getAccounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAccounts" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_getAccounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_modifyAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:modifyAccount" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_modifyAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:modifyAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoteFileInfo">
+    <wsdl:part name="parameters" element="tns:RemoteFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="RemoteFileInfo_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+    <wsdl:part name="Length" element="tns:Length" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_UploadFile_OutputMessage" />
+  <wsdl:message name="ICertMService_CheckTemplateName_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTemplateName" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_CheckTemplateName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckTemplateNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_SaveToDatabase_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveToDatabase" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_SaveToDatabase_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveToDatabaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetEndFilePath_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEndFilePath" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetEndFilePath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEndFilePathResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetListCertOfClass_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCertOfClass" />
+  </wsdl:message>
+  <wsdl:message name="ICertMService_GetListCertOfClass_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCertOfClassResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadRequest">
+    <wsdl:part name="parameters" element="tns:DownloadRequest" />
+  </wsdl:message>
+  <wsdl:portType name="ICertMService">
+    <wsdl:operation name="SizePageSearch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/SizePageSearch" message="tns:ICertMService_SizePageSearch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/SizePageSearchResponse" message="tns:ICertMService_SizePageSearch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/SearchCert" message="tns:ICertMService_SearchCert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/SearchCertResponse" message="tns:ICertMService_SearchCert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreBoard">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/GetScoreBoard" message="tns:ICertMService_GetScoreBoard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/GetScoreBoardResponse" message="tns:ICertMService_GetScoreBoard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/DeleteClass" message="tns:ICertMService_DeleteClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/DeleteClassResponse" message="tns:ICertMService_DeleteClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCertificate">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/AddCertificate" message="tns:ICertMService_AddCertificate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/AddCertificateResponse" message="tns:ICertMService_AddCertificate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadExcel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/ReadExcel" message="tns:ICertMService_ReadExcel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/ReadExcelResponse" message="tns:ICertMService_ReadExcel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListTemplateName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/GetListTemplateName" message="tns:ICertMService_GetListTemplateName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/GetListTemplateNameResponse" message="tns:ICertMService_GetListTemplateName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createCertificateFromJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/createCertificateFromJson" message="tns:ICertMService_createCertificateFromJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/createCertificateFromJsonResponse" message="tns:ICertMService_createCertificateFromJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/DownLoadFile" message="tns:ICertMService_DownLoadFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/DownLoadFileResponse" message="tns:ICertMService_DownLoadFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkingState">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/GetWorkingState" message="tns:ICertMService_GetWorkingState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/GetWorkingStateResponse" message="tns:ICertMService_GetWorkingState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/Close" message="tns:ICertMService_Close_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/CloseResponse" message="tns:ICertMService_Close_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/AddAccount" message="tns:ICertMService_AddAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/AddAccountResponse" message="tns:ICertMService_AddAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/CheckAccount" message="tns:ICertMService_CheckAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/CheckAccountResponse" message="tns:ICertMService_CheckAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/GetTypeAccount" message="tns:ICertMService_GetTypeAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/GetTypeAccountResponse" message="tns:ICertMService_GetTypeAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAccountStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/AddAccountStudent" message="tns:ICertMService_AddAccountStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/AddAccountStudentResponse" message="tns:ICertMService_AddAccountStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAccounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/getAccounts" message="tns:ICertMService_getAccounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/getAccountsResponse" message="tns:ICertMService_getAccounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="modifyAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/modifyAccount" message="tns:ICertMService_modifyAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/modifyAccountResponse" message="tns:ICertMService_modifyAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/UploadFile" name="RemoteFileInfo" message="tns:RemoteFileInfo" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/UploadFileResponse" message="tns:ICertMService_UploadFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTemplateName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/CheckTemplateName" message="tns:ICertMService_CheckTemplateName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/CheckTemplateNameResponse" message="tns:ICertMService_CheckTemplateName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveToDatabase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/SaveToDatabase" message="tns:ICertMService_SaveToDatabase_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/SaveToDatabaseResponse" message="tns:ICertMService_SaveToDatabase_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEndFilePath">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/GetEndFilePath" message="tns:ICertMService_GetEndFilePath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/GetEndFilePathResponse" message="tns:ICertMService_GetEndFilePath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCertOfClass">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/GetListCertOfClass" message="tns:ICertMService_GetListCertOfClass_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/GetListCertOfClassResponse" message="tns:ICertMService_GetListCertOfClass_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadStudentCert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/DownloadStudentCert" name="DownloadRequest" message="tns:DownloadRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/DownloadStudentCertResponse" name="RemoteFileInfo" message="tns:RemoteFileInfo" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadClassCert">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICertMService/DownloadClassCert" name="DownloadRequest" message="tns:DownloadRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICertMService/DownloadClassCertResponse" name="RemoteFileInfo" message="tns:RemoteFileInfo" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICertMService" type="tns:ICertMService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SizePageSearch">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/SizePageSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCert">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/SearchCert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScoreBoard">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/GetScoreBoard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteClass">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/DeleteClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCertificate">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/AddCertificate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadExcel">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/ReadExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListTemplateName">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/GetListTemplateName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCertificateFromJson">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/createCertificateFromJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownLoadFile">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/DownLoadFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkingState">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/GetWorkingState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Close">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/Close" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccount">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/AddAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAccount">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/CheckAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeAccount">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/GetTypeAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAccountStudent">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/AddAccountStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAccounts">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/getAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modifyAccount">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/modifyAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/UploadFile" style="document" />
+      <wsdl:input name="RemoteFileInfo">
+        <soap:header message="tns:RemoteFileInfo_Headers" part="FileName" use="literal" />
+        <soap:header message="tns:RemoteFileInfo_Headers" part="Length" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTemplateName">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/CheckTemplateName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveToDatabase">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/SaveToDatabase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEndFilePath">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/GetEndFilePath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCertOfClass">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/GetListCertOfClass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadStudentCert">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/DownloadStudentCert" style="document" />
+      <wsdl:input name="DownloadRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoteFileInfo">
+        <soap:header message="tns:RemoteFileInfo_Headers" part="FileName" use="literal" />
+        <soap:header message="tns:RemoteFileInfo_Headers" part="Length" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadClassCert">
+      <soap:operation soapAction="http://tempuri.org/ICertMService/DownloadClassCert" style="document" />
+      <wsdl:input name="DownloadRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="RemoteFileInfo">
+        <soap:header message="tns:RemoteFileInfo_Headers" part="FileName" use="literal" />
+        <soap:header message="tns:RemoteFileInfo_Headers" part="Length" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CertMService">
+    <wsdl:port name="BasicHttpBinding_ICertMService" binding="tns:BasicHttpBinding_ICertMService">
+      <soap:address location="http://localhost:59832/CertMService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

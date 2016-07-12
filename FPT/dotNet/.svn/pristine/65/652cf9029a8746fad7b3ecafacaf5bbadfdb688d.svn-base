@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/CertMServiceLib.Generator" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CertMServiceLib.Generator" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="Generator.ExportOption">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Front" />
+      <xs:enumeration value="Back" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Generator.ExportOption" nillable="true" type="tns:Generator.ExportOption" />
+</xs:schema>

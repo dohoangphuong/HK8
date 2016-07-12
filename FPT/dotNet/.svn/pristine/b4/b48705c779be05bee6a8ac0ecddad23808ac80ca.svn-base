@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "DownloadCertificate";
+}
+
+<h2>DownloadCertificate</h2>
+
+<form name="frmMain" action="@Url.Action("DownloadCert", "CertM")" method="get" enctype="multipart/form-data">
+
+    <input type="text" name="code" />
+    <input type="submit" value="Download" />
+</form>

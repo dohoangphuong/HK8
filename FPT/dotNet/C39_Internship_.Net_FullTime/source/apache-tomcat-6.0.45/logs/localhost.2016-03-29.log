@@ -1,0 +1,8 @@
+thg 3 29, 2016 2:18:35 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+thg 3 29, 2016 2:18:38 CH org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'cas'
+thg 3 29, 2016 2:18:39 CH org.apache.catalina.core.ApplicationContext log
+INFO: ContextListener: contextInitialized()
+thg 3 29, 2016 2:18:39 CH org.apache.catalina.core.ApplicationContext log
+INFO: SessionListener: contextInitialized()

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<PendingCommit>
+  <CommitComment />
+  <TrackedFiles>
+    <RelativePath>CertMService\CertMServiceLib\App.config</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\Certificate.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\CertMServiceLib.csproj</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\Data\CertificateData.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\ExcelAPI\ExcelApp.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\ExcelAPI\WorkBook.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\ExcelAPI\WorkSheet.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\Generator\Generator.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\Generator\GeneratorFactory.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\Interface\ICertificateData.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\Interface\IGenerator.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\LinkDownload.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\packages.config</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\Properties\AssemblyInfo.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\Utility\PropertiesReader.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\WordAPI\WordApp.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\WordAPI\WordDocument.cs</RelativePath>
+    <RelativePath>CertMService\CertMServiceLib\WorkingState.cs</RelativePath>
+  </TrackedFiles>
+  <ExcludedItems />
+  <WorkItems />
+</PendingCommit>

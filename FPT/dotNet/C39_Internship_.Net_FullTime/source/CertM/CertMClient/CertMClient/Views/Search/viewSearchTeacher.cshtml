@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<style>
+    .Search {
+        margin: auto;
+        width: 60%;
+        border: 3px solid #73AD21;
+        padding: 10px;
+    }
+
+    .Option {
+        margin: 0% 0% 0% 25%;
+        width: 50%;
+    }
+
+    .Control {
+        margin: 0% 0% 0% 25%;
+        width: 50%;
+    }
+
+    h2 {
+        margin: 0% 0% 0% 25%;
+    }
+
+    .Status {
+        margin: 0% 0% 0% 25%;
+    }
+
+    .btn_search {
+        margin: 0% 0% 0% 40%;
+        width: 20%;
+    }
+
+    .Page {
+        margin: 10px;
+        float: right;
+    }
+</style>
+<div class="Search">
+    <h2>Tìm Kiếm Chứng Chỉ</h2>
+    <form class="Option">
+        <input id="Rd_MaHocVien" type="radio" value="1" name="Option" checked />Mã Chứng chỉ
+        <input id="Rd_MaLop" type="radio" value="2" name="Option" />Mã Lớp
+        <input id="Rd_TenHocVien" type="radio" value="3" name="Option" />Tên Học Viên
+    </form>
+    <input id="Txt_Search" type="text" class="Control" /><br />
+    <a class="Status" id="lnk_Option">Hiện bộ lọc</a>
+    <div id="Show_Option"></div>
+    <input id="btn_Search" type="button" class="btn_search" value="Tìm Kiếm" />
+    <p id="Statusid" class="Status"></p>
+</div>
+<div id="prog"></div>
+<div id="viewResult"></div>
+<div id="Page_link">
+    <input id="btn_Next" type="button" value=">>" hidden="hidden" class="Page" />
+    <p id="numPage" hidden="hidden" class="Page">page</p>
+    <input id="btn_Back" type="button" value="<<" hidden="hidden" class="Page" />
+</div>
+<script>
+    var page = 1;
+    var Numpage;
+    var Value;
+    var Option;
+    var Rank;
+    var Place;
+    var nUrl;
+
+    $(document).ready(function () {
+        $('#btn_Search').click(function () {
+
+            Value = $('#Txt_Search').val();
+            Option = $("input[name='Option']:checked").val();
+            Rank = $('#sel_Rank').val();
+            Place = $('#Txt_Place').val();
+
+            $('#Statusid').text("Đang tìm kiếm ...");
+
+            $('#btn_Back').hide();
+            $('#btn_Next').hide();
+            $('#numPage').hide();
+
+            GetNumPage();
+            getViewResult();
+        });
+    });
+    $(document).ready(function () {
+        $('#btn_Back').click(function () {
+            if (page > 1) {
+                page--;
+                getViewResult();
+            }
+            else
+                alert("Đã là trang đầu!");
+        });
+    });
+    $(document).ready(function () {
+        $('#btn_Next').click(function () {
+            if (page < Numpage) {
+                page++;
+                getViewResult();
+            }
+            else
+                alert("Đã là trang cuối!");
+        });
+    })
+    $(document).ready(function () {
+        $('#lnk_Option').click(function () {
+            if ($(this).text() == 'Hiện bộ lọc') {
+                $('#Show_Option').html('<p class="Status">Xếp Hạng:</p><select class ="Status" id="sel_Rank"> <option value="ALL">ALL</option> <option value="A">A</option> <option value="B">B</option> <option value="C">C</option> <option value="D">D</option></select> <p class="Status">Nơi học:</p> <input id="Txt_Place" type="text" class="Control"/>');
+                $(this).text('Ẩn bộ Lọc');
+            }
+            else {
+                $('#Show_Option').html("");
+                $(this).text('Hiện bộ lọc');
+            }
+
+        });
+    });
+    function GetNumPage() {
+        if (Value.trim()) {
+            var nUrl = '/Search/CountPageCertMSearch?Option=' + Option + '&Value=' + Value + '&Rank=' + Rank + '&Place=' + Place + '&PageSize=5';
+            $.ajax({
+                url: nUrl,
+                contentType: 'application/html; charset=utf-8',
+                type: 'GET',
+                dataType: 'text'
+            })
+        .success(function (result) {
+            Numpage = result;
+        })
+        .error(function (xhr, status) {
+            alert(status + " Lỗi load thông tin trang!");
+        })
+        }
+    };
+    function getViewResult() {
+        if (Value.trim()) {
+            var nUrl = '/Search/viewResultSearchTeacher?Option=' + Option + '&Value=' + Value + '&Rank=' + Rank + '&Place=' + Place + '&Page=';
+            $.ajax({
+                url: nUrl + page + '&PageSize=5',
+                contentType: 'application/html; charset=utf-8',
+                type: 'GET',
+                dataType: 'html'
+            })
+        .success(function (result) {
+            $('#viewResult').html(result);
+            $('#Statusid').text("Đã hoàn thành.");
+            $('#btn_Back').show();
+            $('#btn_Next').show();
+            $('#numPage').show();
+            if (page == 1)
+                $('#numPage').text("Trang Đầu");
+            else
+                if (page == Numpage)
+                    $('#numPage').text("Trang Cuối");
+                else
+                    $('#numPage').text("Trang " + page);
+        })
+        .error(function (xhr, status) {
+            alert(status + ":Lỗi load dữ liệu");
+        })
+        }
+        else
+            $('#Statusid').text("");
+    }
+</script>

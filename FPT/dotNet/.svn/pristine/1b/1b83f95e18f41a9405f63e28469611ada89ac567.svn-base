@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "viewDeleteClass";
+}
+
+<style>
+    .content {
+        margin: auto;
+        width: 40%;
+        border: 3px solid #73AD21;
+        padding: 10px;
+    }
+
+    .Control {
+        margin: 0% 0% 0% 25%;
+        width: 50%;
+    }
+
+    p, h2 {
+        margin: 0% 0% 0% 25%;
+    }
+</style>
+<div class="content">
+    <h2>Xóa Thông Tin Lớp Học</h2>
+    <input id="Txt_Class" type="text" class="Control" />
+    <input id="btn_Delete" type="button" value="Delete" />
+    <p id="Result"></p>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#btn_Delete').click(function () {
+            if (confirm("Bạn có muốn xóa thông tin lớp này khỏi cơ sở dữ liệu không?"))
+            {
+                var ClassNo = $('#Txt_Class').val();
+                if (ClassNo.trim()) {
+                    $.ajax({
+                        url: '/Search/DeleteClass?ClassNo=' + ClassNo,
+                        contentType: 'application/html; charset=utf-8',
+                        type: 'GET',
+                        dataType: 'html'
+                    })
+                .success(function (result) {
+                    if (result == 'True') {
+                        $('#Result').html("Đã xóa thông tin chứng chỉ của lớp có mã lớp <b>" + ClassNo + "<b>");
+                    }
+                    else
+                        $('#Result').html("Đã có lỗi trong quá trình xóa lớp có mã lớp <b>" + ClassNo + "<b>");
+                })
+                .error(function (xhr, status) {
+                    alert(status);
+                })
+                }
+                else
+                    alert("Nhập mã lớp trước khi xóa!");
+            }         
+        });
+    });
+</script>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CertMClient.CertMServiceData.SCOREBOARD>
+
+@{
+    ViewBag.Title = "viewDetail";
+}
+<style>
+    .table{
+        border-collapse: collapse;
+        background-color:#E1D0A4;
+    }
+    table, th, td {
+    border: 1px solid black;
+    text-align: center;
+    }
+    .ScoreBoard {
+    background-color:#E1D0A4;
+    font-family:Calibri;
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+}
+</style>
+<div class="ScoreBoard">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mark)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Mark)
+                </td>
+            </tr>
+        }
+    </table>
+</div>

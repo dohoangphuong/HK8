@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CERTIFICATE_MANAGEMENTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CERTIFICATE">
+          <Key>
+            <PropertyRef Name="CertNo" />
+          </Key>
+          <Property Name="CertNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Place" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Rank" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Major" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ClassNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Link" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CLASS">
+          <Key>
+            <PropertyRef Name="ClassNo" />
+          </Key>
+          <Property Name="ClassNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Link" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SCOREBOARD">
+          <Key>
+            <PropertyRef Name="CertNo" />
+            <PropertyRef Name="Category" />
+          </Key>
+          <Property Name="CertNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mark" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TEMPLATE">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FrontLink" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EndLink" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="fk_CERTIFICATE_ACCOUNT_Email">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="CERTIFICATE" Type="Self.CERTIFICATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="Email" />
+            </Principal>
+            <Dependent Role="CERTIFICATE">
+              <PropertyRef Name="Email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CERTIFICATE_CLASS_ClassNo">
+          <End Role="CLASS" Type="Self.CLASS" Multiplicity="1" />
+          <End Role="CERTIFICATE" Type="Self.CERTIFICATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASS">
+              <PropertyRef Name="ClassNo" />
+            </Principal>
+            <Dependent Role="CERTIFICATE">
+              <PropertyRef Name="ClassNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_SCOREBOARD_CERTIFICATE_CertNo">
+          <End Role="CERTIFICATE" Type="Self.CERTIFICATE" Multiplicity="1" />
+          <End Role="SCOREBOARD" Type="Self.SCOREBOARD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CERTIFICATE">
+              <PropertyRef Name="CertNo" />
+            </Principal>
+            <Dependent Role="SCOREBOARD">
+              <PropertyRef Name="CertNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CERTIFICATE_MANAGEMENTModelStoreContainer">
+          <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CERTIFICATE" EntityType="Self.CERTIFICATE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLASS" EntityType="Self.CLASS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SCOREBOARD" EntityType="Self.SCOREBOARD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEMPLATE" EntityType="Self.TEMPLATE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_CERTIFICATE_ACCOUNT_Email" Association="Self.fk_CERTIFICATE_ACCOUNT_Email">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="CERTIFICATE" EntitySet="CERTIFICATE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CERTIFICATE_CLASS_ClassNo" Association="Self.fk_CERTIFICATE_CLASS_ClassNo">
+            <End Role="CLASS" EntitySet="CLASS" />
+            <End Role="CERTIFICATE" EntitySet="CERTIFICATE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_SCOREBOARD_CERTIFICATE_CertNo" Association="Self.fk_SCOREBOARD_CERTIFICATE_CertNo">
+            <End Role="CERTIFICATE" EntitySet="CERTIFICATE" />
+            <End Role="SCOREBOARD" EntitySet="SCOREBOARD" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CERTIFICATE_MANAGEMENTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ACCOUNT">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CERTIFICATE" Relationship="Self.fk_CERTIFICATE_ACCOUNT_Email" FromRole="ACCOUNT" ToRole="CERTIFICATE" />
+        </EntityType>
+        <EntityType Name="CERTIFICATE">
+          <Key>
+            <PropertyRef Name="CertNo" />
+          </Key>
+          <Property Name="CertNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Rank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Major" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClassNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ACCOUNT" Relationship="Self.fk_CERTIFICATE_ACCOUNT_Email" FromRole="CERTIFICATE" ToRole="ACCOUNT" />
+          <NavigationProperty Name="CLASS" Relationship="Self.fk_CERTIFICATE_CLASS_ClassNo" FromRole="CERTIFICATE" ToRole="CLASS" />
+          <NavigationProperty Name="SCOREBOARD" Relationship="Self.fk_SCOREBOARD_CERTIFICATE_CertNo" FromRole="CERTIFICATE" ToRole="SCOREBOARD" />
+        </EntityType>
+        <EntityType Name="CLASS">
+          <Key>
+            <PropertyRef Name="ClassNo" />
+          </Key>
+          <Property Name="ClassNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Link" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CERTIFICATE" Relationship="Self.fk_CERTIFICATE_CLASS_ClassNo" FromRole="CLASS" ToRole="CERTIFICATE" />
+        </EntityType>
+        <EntityType Name="SCOREBOARD">
+          <Key>
+            <PropertyRef Name="CertNo" />
+            <PropertyRef Name="Category" />
+          </Key>
+          <Property Name="CertNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Mark" Type="Double" Nullable="false" />
+          <NavigationProperty Name="CERTIFICATE" Relationship="Self.fk_SCOREBOARD_CERTIFICATE_CertNo" FromRole="SCOREBOARD" ToRole="CERTIFICATE" />
+        </EntityType>
+        <EntityType Name="TEMPLATE">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FrontLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EndLink" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="fk_CERTIFICATE_ACCOUNT_Email">
+          <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="1" />
+          <End Role="CERTIFICATE" Type="Self.CERTIFICATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCOUNT">
+              <PropertyRef Name="Email" />
+            </Principal>
+            <Dependent Role="CERTIFICATE">
+              <PropertyRef Name="Email" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_CERTIFICATE_CLASS_ClassNo">
+          <End Role="CLASS" Type="Self.CLASS" Multiplicity="1" />
+          <End Role="CERTIFICATE" Type="Self.CERTIFICATE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLASS">
+              <PropertyRef Name="ClassNo" />
+            </Principal>
+            <Dependent Role="CERTIFICATE">
+              <PropertyRef Name="ClassNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_SCOREBOARD_CERTIFICATE_CertNo">
+          <End Role="CERTIFICATE" Type="Self.CERTIFICATE" Multiplicity="1" />
+          <End Role="SCOREBOARD" Type="Self.SCOREBOARD" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CERTIFICATE">
+              <PropertyRef Name="CertNo" />
+            </Principal>
+            <Dependent Role="SCOREBOARD">
+              <PropertyRef Name="CertNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CERTIFICATE_MANAGEMENTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" />
+          <EntitySet Name="CERTIFICATE" EntityType="Self.CERTIFICATE" />
+          <EntitySet Name="CLASS" EntityType="Self.CLASS" />
+          <EntitySet Name="SCOREBOARD" EntityType="Self.SCOREBOARD" />
+          <EntitySet Name="TEMPLATE" EntityType="Self.TEMPLATE" />
+          <AssociationSet Name="fk_CERTIFICATE_ACCOUNT_Email" Association="Self.fk_CERTIFICATE_ACCOUNT_Email">
+            <End Role="ACCOUNT" EntitySet="ACCOUNT" />
+            <End Role="CERTIFICATE" EntitySet="CERTIFICATE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_CERTIFICATE_CLASS_ClassNo" Association="Self.fk_CERTIFICATE_CLASS_ClassNo">
+            <End Role="CLASS" EntitySet="CLASS" />
+            <End Role="CERTIFICATE" EntitySet="CERTIFICATE" />
+          </AssociationSet>
+          <AssociationSet Name="fk_SCOREBOARD_CERTIFICATE_CertNo" Association="Self.fk_SCOREBOARD_CERTIFICATE_CertNo">
+            <End Role="CERTIFICATE" EntitySet="CERTIFICATE" />
+            <End Role="SCOREBOARD" EntitySet="SCOREBOARD" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CERTIFICATE_MANAGEMENTModelStoreContainer" CdmEntityContainer="CERTIFICATE_MANAGEMENTEntities">
+          <EntitySetMapping Name="ACCOUNT">
+            <EntityTypeMapping TypeName="CERTIFICATE_MANAGEMENTModel.ACCOUNT">
+              <MappingFragment StoreEntitySet="ACCOUNT">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CERTIFICATE">
+            <EntityTypeMapping TypeName="CERTIFICATE_MANAGEMENTModel.CERTIFICATE">
+              <MappingFragment StoreEntitySet="CERTIFICATE">
+                <ScalarProperty Name="CertNo" ColumnName="CertNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="ClassNo" ColumnName="ClassNo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLASS">
+            <EntityTypeMapping TypeName="CERTIFICATE_MANAGEMENTModel.CLASS">
+              <MappingFragment StoreEntitySet="CLASS">
+                <ScalarProperty Name="ClassNo" ColumnName="ClassNo" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SCOREBOARD">
+            <EntityTypeMapping TypeName="CERTIFICATE_MANAGEMENTModel.SCOREBOARD">
+              <MappingFragment StoreEntitySet="SCOREBOARD">
+                <ScalarProperty Name="CertNo" ColumnName="CertNo" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEMPLATE">
+            <EntityTypeMapping TypeName="CERTIFICATE_MANAGEMENTModel.TEMPLATE">
+              <MappingFragment StoreEntitySet="TEMPLATE">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FrontLink" ColumnName="FrontLink" />
+                <ScalarProperty Name="EndLink" ColumnName="EndLink" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
